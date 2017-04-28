@@ -123,8 +123,8 @@
                             <input type="checkbox" value="remember-me"> Remember me
                         </label>
                         </div>
-                        <button class="btn btn-lg btn-primary btn-block" type="submit" name="Enviar">Sign in</button>
-                        <button class="btn btn-lg btn-success btn-block" type="submit" name="Enviar">Sign up</button>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit" name="Enviar">Sign in</button><br>
+                        <a href="Views/Signup.php" ><button class="btn btn-lg btn-success btn-block"  name="">Sign up</button></a>
                     </form>
                  </div>
              </div>        
