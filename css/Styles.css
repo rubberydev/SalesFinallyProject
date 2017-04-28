@@ -1,0 +1,49 @@
+header{
+   background-color:cadetblue;
+   margin-left:-15px;
+   padding: 45px;
+   width:100%;
+   font-weight:bolder;
+   font-family:  sans-serif, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', Verdana;
+   border-radius:0px;
+   color:whitesmoke;
+}
+
+header > h1{
+    text-shadow: rgba(0%,0%,0%,.5%);
+}
+
+section{
+    background-color: lightgray;
+    margin:0px;
+   
+}
+
+body{
+    background-color: lightgray;
+    margin:0px;
+}
+
+
+table, thead, tbody, th, tr, td{
+     border:1px solid;
+     text-align: center;
+ }
+
+#tbl{
+    margin: 50px 10px;
+     
+ }
+
+ #btn{
+     margin:8px;
+ }
+
+ ol{
+     margin:10px;
+ }
+
+.row{
+    width:150%;
+}
+
