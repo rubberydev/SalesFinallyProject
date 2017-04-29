@@ -9,9 +9,7 @@ header{
    color:whitesmoke;
 }
 
-header > h1{
-    text-shadow: rgba(0%,0%,0%,.5%);
-}
+
 
 section{
     background-color: lightgray;
@@ -43,7 +41,4 @@ table, thead, tbody, th, tr, td{
      margin:10px;
  }
 
-.row{
-    width:150%;
-}
 

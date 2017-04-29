@@ -3,20 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Main menu</title>
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/Styles.css">
-    <script>
-    
-    </script>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/Styles.css">   
 </head>
-<body>
-    
-    <div class="container-fluid">
+<body>    
+<div class="container-fluid">
    <div class="row">
       <div class="col-sm-12">
         <header>
             <h1>welcome dear <?php 
-          require("Validar.php");
+          require("../Cookies/Validar.php");
           echo $_SESSION['RolSystem'];
           ?>  !!</h1>
         </header>
@@ -27,8 +23,8 @@
  <div class="container-fluid">
     <div class="row">
        <div class="col-sm-4">
-           <ul class="nav nav-pills nav-stacked">
-                <li role="presentation" class="active"><a href="Opcion1.php">Opcion1</a></li>
+           <ul class="nav nav-tabs">
+                <li role="presentation"><a href="Opcion1.php">Opcion1</a></li>
                 <li role="presentation"><a  href="Opcion2.php">Opcion2</a></li>
                 <li role="presentation"><a  href="Opcion3.php">Opcion3</a></li>
           </ul>
@@ -41,7 +37,7 @@
  
        ?>                 
  </section>
-       
-     <a href="CerrarSesion.php" class="btn btn-danger">Close section</a>
+       <script src="../js/bootstrap.min.js"></script>
+     <a href="../Cookies/CerrarSesion.php" class="btn btn-danger">Close section</a>
 </body>
 </html>
