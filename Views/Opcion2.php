@@ -8,22 +8,22 @@
 <body>
     <?php 
     
-  require('Validar.php');
+  require('../Cookies/Validar.php');
      
      if($_SESSION['RolSystem'] == "Student"){
        
         echo "visits of student: ".$_COOKIE['visitsStudent'];
-        require_once("Time2.php");
+        require_once("../Cookies/Time2.php");
 
      }else if($_SESSION['RolSystem'] == "Teacher"){
           
        echo "visits of teacher: ".$_COOKIE['visitsTeacher'];
-        require_once("Time.php");         
+        require_once("../Cookies/Time.php");         
 
      }else if($_SESSION['RolSystem'] == "Employee"){
           
        echo "visits of employee: ".$_COOKIE['visitsEmployee'];
-        require_once("Time.php");         
+        require_once("../Cookies/Time.php");         
 
      }
          
