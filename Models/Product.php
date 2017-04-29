@@ -33,7 +33,7 @@ class Product {
         $this->cost = $cos;
     }
 
-    public function registrarProducto() {
+    public function registerProduct() {
         $insertSQL = "INSERT INTO tblproductos(productID, nombre, description, quantity, cost) VALUES(
             '$this->productID','$this->nombre','$this->description','$this->quantity', '$this->cost')";
 
