@@ -20,7 +20,7 @@
             <h1>Welcome Dear <?php 
           require("Validar.php");
           echo $_SESSION['RolSystem'];
-          ?> !!</h1>
+          ?>!!</h1>
         </header>
       </div>
   </div>
@@ -42,7 +42,7 @@
        ?>                 
  </section>
  <footer>    
-     <a href="CerrarSesion.php" class="btn btn-danger">Close section</a>
+     <a href="CerrarSesion.php" class="btn btn-danger">Close session</a>
 </footer>
 </body>
 </html>

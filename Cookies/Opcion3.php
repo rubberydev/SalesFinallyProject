@@ -11,7 +11,7 @@
             function ErrorRestrict(){
                swal({
                 title: "Area restricted for you...",
-                text: "we felt you had no permission enought to access this site!!!",
+                text: "You can't enter this area, it's restricted!!!",
                 timer: 4000,
                 type: "warning",
                 showConfirmButton: false
@@ -44,6 +44,6 @@
          
         ?>
          <br><a href="SectionMain.php" class="btn btn-warning">return to back</a>
-         <a href="CerrarSesion.php" class="btn btn-danger">Close section</a>
+         <a href="CerrarSesion.php" class="btn btn-danger">Close session</a>
 </body>
 </html>

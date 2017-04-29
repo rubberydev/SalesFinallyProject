@@ -10,7 +10,7 @@
      <script> 
             function Error(){
                swal({
-                title: "There was an error when the system try connect to database!",
+                title: "There was an error when the system tried connect to database!",
                 text: "Try it again",
                 timer: 2000,
                 showConfirmButton: false
@@ -27,7 +27,7 @@
             } 
              function Error3(){
                swal({
-                title: "you must select a user valid",
+                title: "You must select a valid user",
                 text: "ACCESS DENIED!",
                 timer: 5000,
                 showConfirmButton: false
@@ -35,12 +35,12 @@
             } 
             function Error5(){
              swal({
-                    title: "you must logged again...",
-                    text: "incorrect data!",
+                    title: "You must logged again...",
+                    text: "Incorrect data!",
                     type: "warning",
                     showCancelButton: false,
                     confirmButtonColor: "#DD6B55",
-                    confirmButtonText: "Yes,press try again!",
+                    confirmButtonText: "Yes, please try again!",
                     closeOnConfirm: false
                     },
                     function(){
