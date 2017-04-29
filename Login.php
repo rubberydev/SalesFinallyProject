@@ -61,7 +61,7 @@
                     $_SESSION['password'] = $_POST['key'];
                     $_SESSION['LastSession'] =  date("Y-n-j H:i:s");
                     $_SESSION['RolSystem'] = $_POST['rol'];
-                    header("location:Models/SectionMain.php");
+                    header("location:Views/SectionMain.php");
 
                 } else if($_POST['rol']=="Teacher") {
                     require_once("Cookies/CookieTeacher.php");
@@ -70,7 +70,7 @@
                     $_SESSION['password'] = $_POST['key'];
                     $_SESSION['LastSession'] =  date("Y-n-j H:i:s");
                     $_SESSION['RolSystem'] = $_POST['rol'];
-                    header("location:Models/SectionMain.php");
+                    header("location:Views/SectionMain.php");
                 } else if($_POST['rol']=="Employee") {
                     require_once("Cookies/CookieEmployee.php");
                     session_start();
@@ -79,14 +79,14 @@
                     $_SESSION['LastSession'] =  date("Y-n-j H:i:s");
                     $_SESSION['RolSystem'] = $_POST['rol'];
 
-                    header("location:Models/SectionMain.php");  
+                    header("location:Views/SectionMain.php");  
                 } else if($_POST['rol']=="Select") {
                     echo "<script>Error5();</script>";
                 } 
             } else {
                 echo "<script>Error3();</script>";
                 header("refresh:1; url=/SalesFinallyProject/Login.php");
-                    header("location:Models/SectionMain.php");                    
+                    header("location:Views/SectionMain.php");                    
                 }
             } else { 
 ?>

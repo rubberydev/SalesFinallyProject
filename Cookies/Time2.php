@@ -14,11 +14,11 @@
                     type: "warning",
                     showCancelButton: false,
                     confirmButtonColor: "#DD6B55",
-                    confirmButtonText: "Yes,please try again!",
+                    confirmButtonText: "Yes, please try again!",
                     closeOnConfirm: false
                     },
                     function(){
-                    window.location.href='CerrarSesion.php';
+                    window.location.href='CloseSession.php';
                     });
             } 
     </script>

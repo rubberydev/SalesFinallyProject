@@ -25,8 +25,6 @@
        <div class="col-sm-4">
            <ul class="nav nav-pills nav-stacked">
                 <li role="presentation" class="active"><a href="frmRegisterProduct.php">Register Product</a></li>
-           <ul class="nav nav-tabs">
-                <li role="presentation"><a href="frmRegisterProduct.php">Register Product</a></li>
                 <li role="presentation"><a  href="Opcion2.php">Opcion2</a></li>
                 <li role="presentation"><a  href="Opcion3.php">Opcion3</a></li>
           </ul>
@@ -38,6 +36,6 @@
        ?>                 
  </section>
      <script src="../js/bootstrap.min.js"></script>
-     <a href="CerrarSesion.php" class="btn btn-danger">Close session</a>
+     <a href="../Cookies/CloseSession.php" class="btn btn-danger">Close session</a>
 </body>
 </html>
