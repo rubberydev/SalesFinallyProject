@@ -20,9 +20,17 @@
         require_once("Time.php");         
      }
         ?>
+        <section>
+        <form action="../Controllers/productController.php" method="post">
+        <p><label>Product ID: </label><input type="number" name="productID" required/></p>
+        <p><label>Name: </label><input type="text" name="nombre" required/></p>
+        <p><label>Description: </label><input type="text" name="description" required/></p>
+        <p><label>Quantity: </label><input type="number" name="quantity" required/></p>
+        <p><label>Cost: </label><input type="number" name="cost" required/></p>
+        <p><input type="submit" name="Enviar"/><input type="reset" name="Limpiar"/></p> 
+        </form>
+        </section>
     <br><a href="SectionMain.php" class="btn btn-warning">return to back</a>
        <a href="CerrarSesion.php" class="btn btn-danger">Close session</a>
  </body>
  </html>
- 
- 
