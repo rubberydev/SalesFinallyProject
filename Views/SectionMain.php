@@ -23,8 +23,8 @@
  <div class="container-fluid">
     <div class="row">
        <div class="col-sm-4">
-           <ul class="nav nav-pills nav-stacked">
-                <li role="presentation" class="active"><a href="frmRegisterProduct.php">Register Product</a></li>
+           <ul class="nav nav-tabs">
+           <li role="presentation" class="active"><a href="frmRegisterProduct.php">Register Product</a></li>
                 <li role="presentation"><a  href="Opcion2.php">Opcion2</a></li>
                 <li role="presentation"><a  href="Opcion3.php">Opcion3</a></li>
           </ul>
