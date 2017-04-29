@@ -21,7 +21,7 @@
      }
         ?>
     <br><a href="SectionMain.php" class="btn btn-warning">return to back</a>
-       <a href="CerrarSesion.php" class="btn btn-danger">Close section</a>
+       <a href="CerrarSesion.php" class="btn btn-danger">Close session</a>
  </body>
  </html>
  
