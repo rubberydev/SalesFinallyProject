@@ -3,22 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Main menu</title>
-    <link rel="stylesheet" href="../css/Normalize.css">
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/Styles.css">
-    
-    <script>
-    
-    </script>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/Styles.css">   
 </head>
-<body>
-    
-    <div class="container-fluid">
+<body>    
+<div class="container-fluid">
    <div class="row">
       <div class="col-sm-12">
         <header>
             <h1>Welcome Dear <?php 
-          require("Validar.php");
+          require("../Cookies/Validar.php");
           echo $_SESSION['RolSystem'];
           ?>!!</h1>
         </header>
@@ -29,11 +23,13 @@
  <div class="container-fluid">
     <div class="row">
        <div class="col-sm-4">
-             <ul class="nav nav-tabs">
+           <ul class="nav nav-pills nav-stacked">
                 <li role="presentation" class="active"><a href="frmRegisterProduct.php">Register Product</a></li>
+           <ul class="nav nav-tabs">
+                <li role="presentation"><a href="frmRegisterProduct.php">Register Product</a></li>
                 <li role="presentation"><a  href="Opcion2.php">Opcion2</a></li>
                 <li role="presentation"><a  href="Opcion3.php">Opcion3</a></li>
-            </ul>          
+          </ul>
         </div>
     </div>
  </div>  
@@ -41,8 +37,7 @@
   require("../Connection/stringConnection.php"); 
        ?>                 
  </section>
- <footer>    
+     <script src="../js/bootstrap.min.js"></script>
      <a href="CerrarSesion.php" class="btn btn-danger">Close session</a>
-</footer>
 </body>
 </html>

@@ -7,7 +7,7 @@
  </head>
  <body>
      <?php
-    require('Validar.php');
+    require('../Cookies/Validar.php');
      
      if($_SESSION['RolSystem'] == "Student"){
         echo "visits of student: ".$_COOKIE['visitsStudent'];
@@ -30,7 +30,7 @@
         <p><input type="submit" name="Enviar"/><input type="reset" name="Limpiar"/></p> 
         </form>
         </section>
-    <br><a href="SectionMain.php" class="btn btn-warning">return to back</a>
+    <br><a href="SectionMain.php" class="btn btn-warning">Back to main Section</a>
        <a href="CerrarSesion.php" class="btn btn-danger">Close session</a>
  </body>
  </html>

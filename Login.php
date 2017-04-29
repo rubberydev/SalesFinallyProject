@@ -51,9 +51,7 @@
 </head>
 <body> 
 <?php 
-         
          if(isset($_POST['user']) && isset($_POST['key'])) {
-
             if($_POST['user'] == 'julito' && $_POST['key'] == 123) {
 
                 if($_POST['rol']=="Student") {
@@ -72,7 +70,7 @@
                     $_SESSION['password'] = $_POST['key'];
                     $_SESSION['LastSession'] =  date("Y-n-j H:i:s");
                     $_SESSION['RolSystem'] = $_POST['rol'];
-                    header("location:Cookies/SectionMain.php");
+                    header("location:Models/SectionMain.php");
                 } else if($_POST['rol']=="Employee") {
                     require_once("Cookies/CookieEmployee.php");
                     session_start();
@@ -80,22 +78,17 @@
                     $_SESSION['password'] = $_POST['key'];
                     $_SESSION['LastSession'] =  date("Y-n-j H:i:s");
                     $_SESSION['RolSystem'] = $_POST['rol'];
-<<<<<<< HEAD
-                    header("location:Cookies/SectionMain.php");  
+
+                    header("location:Models/SectionMain.php");  
                 } else if($_POST['rol']=="Select") {
                     echo "<script>Error5();</script>";
                 } 
             } else {
                 echo "<script>Error3();</script>";
                 header("refresh:1; url=/SalesFinallyProject/Login.php");
-=======
-                    header("location:Cookies/SectionMain.php");
-                    
+                    header("location:Models/SectionMain.php");                    
                 }
-
->>>>>>> 0a0bd1795eb68a9a393f3840a3397a34174caf84
-            }
-        } else { 
+            } else { 
 ?>
 <div class="container">
   <div class="row">

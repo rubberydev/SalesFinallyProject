@@ -43,7 +43,7 @@
      }
          
         ?>
-         <br><a href="SectionMain.php" class="btn btn-warning">return to back</a>
+         <br><a href="SectionMain.php" class="btn btn-warning">Back to main section.</a>
          <a href="CerrarSesion.php" class="btn btn-danger">Close session</a>
 </body>
 </html>
