@@ -10,9 +10,7 @@
      class SignUp{
 
         private $UserName;
-
         private $Password;
-        
         private $con;
 
         public function __construct(){
@@ -41,7 +39,6 @@
               print "------------->ERROR<------------------";
             }
         }
-
      }
     ?>
 </body>

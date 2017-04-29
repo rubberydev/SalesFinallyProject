@@ -31,13 +31,10 @@
         $LastDateIntro = $_SESSION['LastSection'];
         $CurrentDate = date('Y-n-j H:i:s');
         $TimeInactivity = (strtotime($CurrentDate)-(strtotime($LastDateIntro)));
-        
-        
 
-        if($TimeInactivity>=20){            
+        if($TimeInactivity>=20) {            
             echo "<script>Error3();</script>";
-            
-        }else{
+        } else {
             $_SESSION['LastSection']=$CurrentDate;
         }
 ?>
