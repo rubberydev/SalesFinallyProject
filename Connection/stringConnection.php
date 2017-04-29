@@ -6,7 +6,7 @@ class dbConnection{
                 echo "Sorry, there was an error in the connection with the database";
                 exit();
             } else {
-                echo "Succesful connection. <br>";
+                //echo "Succesful connection. <br>";
                 return $conexion;
             }
         }

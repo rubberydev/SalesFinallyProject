@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/sweetalert.css">
     <script src="js/sweetalert.min.js"></script>
     <script src="js/jquery-3.1.1.js"></script>
@@ -63,7 +63,7 @@
                     $_SESSION['password'] = $_POST['key'];
                     $_SESSION['LastSession'] =  date("Y-n-j H:i:s");
                     $_SESSION['RolSystem'] = $_POST['rol'];
-                    header("location:Cookies/SectionMain.php");
+                    header("location:Models/SectionMain.php");
 
                 } else if($_POST['rol']=="Teacher") {
                     require_once("Cookies/CookieTeacher.php");
@@ -80,6 +80,7 @@
                     $_SESSION['password'] = $_POST['key'];
                     $_SESSION['LastSession'] =  date("Y-n-j H:i:s");
                     $_SESSION['RolSystem'] = $_POST['rol'];
+<<<<<<< HEAD
                     header("location:Cookies/SectionMain.php");  
                 } else if($_POST['rol']=="Select") {
                     echo "<script>Error5();</script>";
@@ -87,6 +88,12 @@
             } else {
                 echo "<script>Error3();</script>";
                 header("refresh:1; url=/SalesFinallyProject/Login.php");
+=======
+                    header("location:Cookies/SectionMain.php");
+                    
+                }
+
+>>>>>>> 0a0bd1795eb68a9a393f3840a3397a34174caf84
             }
         } else { 
 ?>
@@ -100,9 +107,9 @@
                     <form class="form-signin" action="Login.php" method="POST">
                         <h2 class="form-signin-heading">Welcome <strong>!!!</strong></h2>
                         <label for="inputEmail" >User</label><br>
-                        <input type="text" id="inputEmail"  name="user" class="form-control" placeholder="user name" required autofocus ><br>
+                        <input type="text" id="inputEmail"  name="user" class="form-control" placeholder="user name" ><br>
                         <label for="inputPassword" >Password</label><br>
-                        <input type="password" id="inputPassword"  class="form-control" name="key" placeholder="Password" required>
+                        <input type="password" id="inputPassword"  class="form-control" name="key" placeholder="Password">
                         <div class="checkbox">
                             <select name="rol" id="">
                                 <option>Select</option>
@@ -114,9 +121,9 @@
                             <input type="checkbox" value="remember-me"> Remember me
                         </label>
                         </div>
-                        <button class="btn btn-lg btn-primary btn-block" type="submit" name="Enviar">Sign in</button><br>
-                        <a href="Views/Signup.php" ><button class="btn btn-lg btn-success btn-block"  name="">Sign up</button></a>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit" name="log">Sign in</button><br>                       
                     </form>
+                     <a href="Views/Signup.php" ><button  class="btn btn-lg btn-success btn-block"  name="register">Sign up</button></a>
                  </div>
              </div>        
         </div>
