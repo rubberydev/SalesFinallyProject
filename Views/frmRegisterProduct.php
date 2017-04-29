@@ -27,7 +27,7 @@
         <p><label>Description: </label><input type="text" name="description" required/></p>
         <p><label>Quantity: </label><input type="number" name="quantity" required/></p>
         <p><label>Cost: </label><input type="number" name="cost" required/></p>
-        <p><input type="submit" name="Enviar"/><input type="reset" name="Limpiar"/></p> 
+        <p><input type="submit" name="Send"/><input type="reset" name="Clean"/></p> 
         </form>
         </section>
     <br><a href="SectionMain.php" class="btn btn-warning">Back to main Section</a>

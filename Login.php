@@ -35,7 +35,7 @@
             } 
             function Error5(){
              swal({
-                    title: "You must logged again...",
+                    title: "You must login again...",
                     text: "Incorrect data!",
                     type: "warning",
                     showCancelButton: false,

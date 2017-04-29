@@ -10,7 +10,7 @@
      function Error3(){
                swal({
                     title: "You must login again...",
-                    text: "For you security this session had that to be closed!",
+                    text: "For you security this session had to be closed!",
                     type: "warning",
                     showCancelButton: false,
                     confirmButtonColor: "#DD6B55",

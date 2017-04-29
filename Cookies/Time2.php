@@ -9,8 +9,8 @@
     <script>
      function Error3(){
                swal({
-                    title: "you must login again...",
-                    text: "For you security this session had that to be closed!",
+                    title: "You must login again...",
+                    text: "For you security this session had to be closed!",
                     type: "warning",
                     showCancelButton: false,
                     confirmButtonColor: "#DD6B55",
@@ -24,7 +24,6 @@
     </script>
 </head>
 <body>
- 
  <?php
         require('Validar.php');
         
