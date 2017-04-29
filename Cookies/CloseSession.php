@@ -2,6 +2,6 @@
 require("Validar.php");
 session_unset();
 session_destroy();
-header("location:../Login.php");
+header("refresh:1 url=/ProyectoPHP/Login.php");
 
 ?>
