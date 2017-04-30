@@ -10,7 +10,7 @@
      <script> 
             function Error(){
                swal({
-                title: "There was an error when the system try connect to database!",
+                title: "There was an error when the system tried connect to database!",
                 text: "Try it again",
                 timer: 2000,
                 showConfirmButton: false
@@ -19,7 +19,7 @@
 
             function Error2(){
                swal({
-                title: "Closed section!",
+                title: "Closed session!",
                 text: "Bye",
                 timer: 5000,
                 showConfirmButton: false
@@ -27,7 +27,7 @@
             } 
              function Error3(){
                swal({
-                title: "you must select a user valid",
+                title: "You must select a valid user",
                 text: "ACCESS DENIED!",
                 timer: 5000,
                 showConfirmButton: false
@@ -35,12 +35,12 @@
             } 
             function Error5(){
              swal({
-                    title: "you must logged again...",
-                    text: "incorrect data!",
+                    title: "You must login again...",
+                    text: "Incorrect data!",
                     type: "warning",
                     showCancelButton: false,
                     confirmButtonColor: "#DD6B55",
-                    confirmButtonText: "Yes,press try again!",
+                    confirmButtonText: "Yes, please try again!",
                     closeOnConfirm: false
                     },
                     function(){
@@ -51,47 +51,44 @@
 </head>
 <body> 
 <?php 
-         
-         if(isset($_POST['user']) && isset($_POST['key'])){
+         if(isset($_POST['user']) && isset($_POST['key'])) {
+            if($_POST['user'] == 'julito' && $_POST['key'] == 123) {
 
-            if($_POST['user'] == 'julito' && $_POST['key'] == 123){
-
-                if($_POST['rol']=="Student"){
+                if($_POST['rol']=="Student") {
                     require_once("Cookies/CookieStudent.php");
                     session_start();
-                    $_SESSION['User'] = $_POST['user'];
+                    $_SESSION['user'] = $_POST['user'];
                     $_SESSION['password'] = $_POST['key'];
-                    $_SESSION['LastSection'] =  date("Y-n-j H:i:s");
+                    $_SESSION['LastSession'] =  date("Y-n-j H:i:s");
                     $_SESSION['RolSystem'] = $_POST['rol'];
-                    header("location:Models/SectionMain.php");
+                    header("location:Views/SectionMain.php");
 
-                }else if($_POST['rol']=="Teacher"){
+                } else if($_POST['rol']=="Teacher") {
                     require_once("Cookies/CookieTeacher.php");
                     session_start();
-                    $_SESSION['User'] = $_POST['user'];
+                    $_SESSION['user'] = $_POST['user'];
                     $_SESSION['password'] = $_POST['key'];
-                    $_SESSION['LastSection'] =  date("Y-n-j H:i:s");
+                    $_SESSION['LastSession'] =  date("Y-n-j H:i:s");
                     $_SESSION['RolSystem'] = $_POST['rol'];
-                    header("location:Cookies/SectionMain.php");
-                }else if($_POST['rol']=="Employee"){
+                    header("location:Views/SectionMain.php");
+                } else if($_POST['rol']=="Employee") {
                     require_once("Cookies/CookieEmployee.php");
                     session_start();
-                    $_SESSION['User'] = $_POST['user'];
+                    $_SESSION['user'] = $_POST['user'];
                     $_SESSION['password'] = $_POST['key'];
-                    $_SESSION['LastSection'] =  date("Y-n-j H:i:s");
+                    $_SESSION['LastSession'] =  date("Y-n-j H:i:s");
                     $_SESSION['RolSystem'] = $_POST['rol'];
-                    header("location:Cookies/SectionMain.php");
-                    
+
+                    header("location:Views/SectionMain.php");  
+                } else if($_POST['rol']=="Select") {
+                    echo "<script>Error5();</script>";
+                } 
+            } else {
+                echo "<script>Error3();</script>";
+                header("refresh:1; url=/SalesFinallyProject/Login.php");
+                    header("location:Views/SectionMain.php");                    
                 }
-
-            }
-
-        }else{  
-   
-        
-
-
-  
+            } else { 
 ?>
 <div class="container">
   <div class="row">
@@ -111,8 +108,7 @@
                                 <option>Select</option>
                                 <option>Student</option>
                                 <option>Teacher</option>
-                                <option>Employee</option>
-                                
+                                <option>Employee</option>   
                             </select>
                         <label>
                             <input type="checkbox" value="remember-me"> Remember me
@@ -129,7 +125,6 @@
    </div>
 </div>  
         <?php } ?>
-
 <script src="js/bootstrap.min.js"></script>
 
 </body>

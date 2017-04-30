@@ -9,16 +9,16 @@
     <script>
      function Error3(){
                swal({
-                    title: "you must logged again...",
-                    text: "For you security this section had that to be closed!",
+                    title: "You must login again...",
+                    text: "For you security this session had to be closed!",
                     type: "warning",
                     showCancelButton: false,
                     confirmButtonColor: "#DD6B55",
-                    confirmButtonText: "Yes,press try again!",
+                    confirmButtonText: "Yes, please try again!",
                     closeOnConfirm: false
                     },
                     function(){
-                    window.location.href='CerrarSesion.php';
+                    window.location.href='CloseSession.php';
                     });
             } 
     </script>
@@ -27,17 +27,13 @@
     <?php 
         require('Validar.php');
         
-        $LastDateIntro = $_SESSION['LastSection'];
+        $LastDateIntro = $_SESSION['LastSession'];
         $CurrentDate = date('Y-n-j H:i:s');
         $TimeInactivity = (strtotime($CurrentDate)-(strtotime($LastDateIntro)));
-        
-        
-
-        if($TimeInactivity>=10){            
+        if($TimeInactivity>=10) {            
             echo "<script>Error3();</script>";
-            
-        }else{
-            $_SESSION['LastSection']=$CurrentDate;
+        } else {
+            $_SESSION['LastSession']=$CurrentDate;
         }
     ?>
 </body>

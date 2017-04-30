@@ -32,9 +32,7 @@
      class SignUp{
 
         private $UserName;
-
         private $Password;
-        
         private $con;
 
         public function __construct(){
@@ -63,7 +61,6 @@
               print "------------->ERROR<------------------";
             }
         }
-
      }
     ?>
     <script src="js/bootstrap.min.js"></script>

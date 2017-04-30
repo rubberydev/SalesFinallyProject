@@ -11,7 +11,7 @@
             function ErrorRestrict(){
                swal({
                 title: "Area restricted for you...",
-                text: "we felt you had no permission enought to access this site!!!",
+                text: "You can't enter this area, it's restricted!!!",
                 timer: 4000,
                 type: "warning",
                 showConfirmButton: false
@@ -24,7 +24,7 @@
 </head>
 <body>
 <?php
-  require('Validar.php');
+  require('../Cookies/Validar.php');
      
      if($_SESSION['RolSystem'] == "Student"){
                    
@@ -33,17 +33,17 @@
      }else if($_SESSION['RolSystem'] == "Teacher"){
           
        echo "visits of teacher: ".$_COOKIE['visitsTeacher'];
-        require_once("Time.php");         
+        require_once("../Cookies/Time.php");         
 
      }else if($_SESSION['RolSystem'] == "Employee"){
           
        echo "visits of employee: ".$_COOKIE['visitsEmployee'];
-        require_once("Time.php");         
+        require_once("../Cookies/Time.php");         
 
      }
          
         ?>
-         <br><a href="SectionMain.php" class="btn btn-warning">return to back</a>
-         <a href="CerrarSesion.php" class="btn btn-danger">Close section</a>
+         <br><a href="SectionMain.php" class="btn btn-warning">Back to main section.</a>
+         <a href="../Cookies/CloseSession.php" class="btn btn-danger">Close session</a>
 </body>
 </html>
