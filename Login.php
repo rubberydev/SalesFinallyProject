@@ -57,7 +57,7 @@
                 if($_POST['rol']=="Student") {
                     require_once("Cookies/CookieStudent.php");
                     session_start();
-                    $_SESSION['User'] = $_POST['user'];
+                    $_SESSION['user'] = $_POST['user'];
                     $_SESSION['password'] = $_POST['key'];
                     $_SESSION['LastSession'] =  date("Y-n-j H:i:s");
                     $_SESSION['RolSystem'] = $_POST['rol'];
@@ -66,7 +66,7 @@
                 } else if($_POST['rol']=="Teacher") {
                     require_once("Cookies/CookieTeacher.php");
                     session_start();
-                    $_SESSION['User'] = $_POST['user'];
+                    $_SESSION['user'] = $_POST['user'];
                     $_SESSION['password'] = $_POST['key'];
                     $_SESSION['LastSession'] =  date("Y-n-j H:i:s");
                     $_SESSION['RolSystem'] = $_POST['rol'];
@@ -74,7 +74,7 @@
                 } else if($_POST['rol']=="Employee") {
                     require_once("Cookies/CookieEmployee.php");
                     session_start();
-                    $_SESSION['User'] = $_POST['user'];
+                    $_SESSION['user'] = $_POST['user'];
                     $_SESSION['password'] = $_POST['key'];
                     $_SESSION['LastSession'] =  date("Y-n-j H:i:s");
                     $_SESSION['RolSystem'] = $_POST['rol'];
