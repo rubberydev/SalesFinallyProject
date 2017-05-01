@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/sweetalert.css">
-    <script src="js/sweetalert.min.js"></script>
-    <script src="js/jquery-3.1.1.js"></script>
+    <link rel="stylesheet" href="css/sweetalert.css">   
     <title>Log In</title>
      <script> 
             function Error(){
@@ -51,6 +49,9 @@
 </head>
 <body> 
 <?php 
+
+ 
+    
          if(isset($_POST['user']) && isset($_POST['key'])) {
             if($_POST['user'] == 'julito' && $_POST['key'] == 123) {
 
@@ -97,8 +98,8 @@
           <div class="col-sm-4">             
               <div class="panel panel-default">
                   <div class="panel-body">
-                    <form class="form-signin" action="Login.php" method="POST">
-                        <h2 class="form-signin-heading">Welcome <strong>!!!</strong></h2>
+                    <form class="form-signin" action="Controllers/AuthenticationController.php" method="POST">
+                        <h2 class="form-signin-heading">Sport Wear Clothing <strong>!!!</strong></h2>
                         <label for="inputEmail" >User</label><br>
                         <input type="text" id="inputEmail"  name="user" class="form-control" placeholder="user name" ><br>
                         <label for="inputPassword" >Password</label><br>
@@ -106,17 +107,17 @@
                         <div class="checkbox">
                             <select name="rol" id="">
                                 <option>Select</option>
-                                <option>Student</option>
-                                <option>Teacher</option>
+                                <option>Customer</option>
+                                <option>Administrator</option>
                                 <option>Employee</option>   
                             </select>
                         <label>
                             <input type="checkbox" value="remember-me"> Remember me
                         </label>
                         </div>
-                        <button class="btn btn-lg btn-primary btn-block" type="submit" name="log">Sign in</button><br>                       
+                        <button class="btn btn-lg btn-primary btn-block" type="submit" name="log">Sign in <span class="glyphicon glyphicon-log-in"></span></button><br>                       
                     </form>
-                     <a href="Views/Signup.php" ><button  class="btn btn-lg btn-success btn-block"  name="register">Sign up</button></a>
+                     <a href="Views/Signup.php" ><button  class="btn btn-lg btn-success btn-block"  name="register">Sign up <span class="glyphicon glyphicon-user"></span></button></a>
                  </div>
              </div>        
         </div>
@@ -124,8 +125,9 @@
        </div>
    </div>
 </div>  
-        <?php } ?>
+        <?php }  ?>
+<script src="js/jquery-3.1.1.js"></script>
 <script src="js/bootstrap.min.js"></script>
-
+<script src="js/sweetalert.min.js"></script>
 </body>
 </html>

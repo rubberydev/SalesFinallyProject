@@ -18,7 +18,7 @@
                     closeOnConfirm: false
                     },
                     function(){
-                    window.location.href='CloseSession.php';
+                    window.location.href='../Cookies/CloseSession.php';
                     });
             } 
     </script>

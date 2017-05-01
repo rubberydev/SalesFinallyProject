@@ -1,3 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/sweetalert.css">
+    
+    
+    <title>Product</title>
+    <script>
+         function ProductRegistered(name){
+               swal({
+                    title: "Done!",
+                    text: "product: "+name+" has been saved successfully",
+                    type: "success",
+                    showCancelButton: false,
+                    confirmButtonColor: "green",
+                    confirmButtonText: "OK",
+                    closeOnConfirm: false
+                    },
+                    function(){
+                    window.location.href='../Views/frmRegisterProduct.php';
+                    });
+            } 
+            
+   </script>
+</head>
+<body>
 <?php
 require('../Connection/stringConnection.php');
 
@@ -34,18 +62,26 @@ class Product {
     }
 
     public function registerProduct() {
-        $insertSQL = "INSERT INTO tblproductos(productID, nombre, description, quantity, cost) VALUES(
-            '$this->productID','$this->nombre','$this->description','$this->quantity', '$this->cost')";
+        $insertSQL = "INSERT INTO tblproductos(productID, name, description, quantity, cost) VALUES(
+            '$this->productID','$this->name','$this->description','$this->quantity', '$this->cost')";
 
         $res = $this->con->query($insertSQL);
 
         if($res) {
-            echo "Product registered.";
+            echo '<script>ProductRegistered("'.$this->name.'");</script>';
+           
         } else {
             echo "Registry failed.";
+            
             exit();
         }
+         $this->con->close();
     }
 }
 
 ?>
+ <script src="../js/jquery-3.1.1.js"></script>
+ <script src="js/bootstrap.min.js"></script>
+ <script src="../js/sweetalert.min.js"></script>
+</body>
+</html>
