@@ -23,6 +23,12 @@
                     <label for="key">Key: </label>
                     <input type="password" class="form-control" name="key" placeholder="password" required/>
                 </div>
+                <label for="rol">Choose you rol into the system: </label>
+                <select name="rol" id="">                                
+                                <option>Customer</option>
+                                <option>Administrator</option>
+                                <option>Employee</option>   
+                            </select><br>
                 <input type="submit" class="btn btn-success" name="Enviar" value="Send"/>  <input type="reset" class="btn btn-danger" name="Clean"/><br><hr>
                  <a href="../Login.php" value="back to login" class="btn btn-primary">Back to login <span class="glyphicon glyphicon-home"></span></a>
             </form>

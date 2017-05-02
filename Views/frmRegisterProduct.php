@@ -11,16 +11,16 @@
     <div class="row">
       <div class="col-sm-5">
      <?php
-    require('../Cookies/Validar.php');
+    require_once('../Cookies/Validar.php');
      echo "<div class='panel panel-default'><div class='panel-body'>";
-        if($_SESSION['RolSystem'] == "Student"){
-            echo "<strong>visits of student: </strong>".$_COOKIE['visitsStudent'];
+        if($_SESSION['RolSystem'] == "Customer"){
+            echo "<strong>visits of customer: </strong>".$_COOKIE['visitsStudent'];
             require_once("../Cookies/Time2.php");
-        } else if($_SESSION['RolSystem'] == "Teacher") {
-        echo "<strong>visits of teacher: </strong>".$_COOKIE['visitsTeacher'];
+        } else if($_SESSION['RolSystem'] == "Administrator") {
+        echo "<strong>visits of Administrator: </strong>".$_COOKIE['visitsTeacher'];
             require_once("../Cookies/Time.php");         
         } else if($_SESSION['RolSystem'] == "Employee") {
-        echo "<strong>visits of employee: </strong>".$_COOKIE['visitsEmployee'];
+        echo "<strong>visits of employee: </strong>".$_COOKIE['visitEmployee'];
             require_once("../Cookies/Time.php");         
         }
     echo " </div></div></div><div class='col-sm-4 col-sm-offset-3'>";

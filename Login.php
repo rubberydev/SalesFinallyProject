@@ -31,66 +31,10 @@
                 showConfirmButton: false
                 });
             } 
-            function Error5(){
-             swal({
-                    title: "You must login again...",
-                    text: "Incorrect data!",
-                    type: "warning",
-                    showCancelButton: false,
-                    confirmButtonColor: "#DD6B55",
-                    confirmButtonText: "Yes, please try again!",
-                    closeOnConfirm: false
-                    },
-                    function(){
-                    window.location.href='';
-                    });
-            }
+           
     </script>
 </head>
 <body> 
-<?php 
-
- 
-    
-         if(isset($_POST['user']) && isset($_POST['key'])) {
-            if($_POST['user'] == 'julito' && $_POST['key'] == 123) {
-
-                if($_POST['rol']=="Student") {
-                    require_once("Cookies/CookieStudent.php");
-                    session_start();
-                    $_SESSION['user'] = $_POST['user'];
-                    $_SESSION['password'] = $_POST['key'];
-                    $_SESSION['LastSession'] =  date("Y-n-j H:i:s");
-                    $_SESSION['RolSystem'] = $_POST['rol'];
-                    header("location:Views/SectionMain.php");
-
-                } else if($_POST['rol']=="Teacher") {
-                    require_once("Cookies/CookieTeacher.php");
-                    session_start();
-                    $_SESSION['user'] = $_POST['user'];
-                    $_SESSION['password'] = $_POST['key'];
-                    $_SESSION['LastSession'] =  date("Y-n-j H:i:s");
-                    $_SESSION['RolSystem'] = $_POST['rol'];
-                    header("location:Views/SectionMain.php");
-                } else if($_POST['rol']=="Employee") {
-                    require_once("Cookies/CookieEmployee.php");
-                    session_start();
-                    $_SESSION['user'] = $_POST['user'];
-                    $_SESSION['password'] = $_POST['key'];
-                    $_SESSION['LastSession'] =  date("Y-n-j H:i:s");
-                    $_SESSION['RolSystem'] = $_POST['rol'];
-
-                    header("location:Views/SectionMain.php");  
-                } else if($_POST['rol']=="Select") {
-                    echo "<script>Error5();</script>";
-                } 
-            } else {
-                echo "<script>Error3();</script>";
-                header("refresh:1; url=/SalesFinallyProject/Login.php");
-                    header("location:Views/SectionMain.php");                    
-                }
-            } else { 
-?>
 <div class="container">
   <div class="row">
      <div class="col-sm-4">
@@ -125,7 +69,7 @@
        </div>
    </div>
 </div>  
-        <?php }  ?>
+        
 <script src="js/jquery-3.1.1.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/sweetalert.min.js"></script>

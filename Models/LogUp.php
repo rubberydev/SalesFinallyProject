@@ -61,6 +61,7 @@
     require_once('../Connection/stringConnection.php');
      class SignUp{
 
+        private $TypeUser;
         private $UserName;
         private $Password;
         private $con;
@@ -79,9 +80,13 @@
             $this->Password = $pass;
         }
 
+        public function setRol($role){
+            $this->TypeUser = $role;
+        }
+
         public function registerUser(){
-            $insertSQL = "INSERT INTO Users(nameUser, passwd) VALUES(
-            '$this->UserName','$this->Password')";
+            $insertSQL = "INSERT INTO Users(nameUser, passwd, Role) VALUES(
+            '$this->UserName','$this->Password','$this->TypeUser')";
 
             $statement = $this->con->query($insertSQL);
 
@@ -94,13 +99,13 @@
      
 
         public function ValidateUser(){
-            $SQLquery = "SELECT * FROM Users WHERE nameUser = '$this->UserName' AND passwd = '$this->Password'";
+            $SQLquery = "SELECT * FROM Users WHERE nameUser = '$this->UserName' AND passwd = '$this->Password' AND Role = '$this->TypeUser'";
             $statement = $this->con->query($SQLquery);
 
             if($statement->num_rows > 0){
                 while($rows = $statement->fetch_assoc()){
                     //echo "user".$rows['nameUser']. "<br>key".$rows['passwd'];
-                     if($rows['nameUser'] == $this->UserName && $rows['passwd']){                         
+                     if($rows['nameUser'] == $this->UserName && $rows['passwd'] == $this->Password && $rows['Role']==$this->TypeUser){                                                 
                          $this->con->close();
                          header("location:../Views/SectionMain.php");
                      }

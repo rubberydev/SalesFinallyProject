@@ -30,7 +30,7 @@
         $LastDateIntro = $_SESSION['LastSession'];
         $CurrentDate = date('Y-n-j H:i:s');
         $TimeInactivity = (strtotime($CurrentDate)-(strtotime($LastDateIntro)));
-        if($TimeInactivity>=10) {            
+        if($TimeInactivity>=60) {            
             echo "<script>Error3();</script>";
         } else {
             $_SESSION['LastSession']=$CurrentDate;
