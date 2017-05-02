@@ -8,7 +8,7 @@
      <script> 
       function Error5(){
              swal({
-                    title: "You must choose an user valid...",
+                    title: "You must choose a valid username...",
                     text: "Incorrect user!",
                     type: "warning",
                     showCancelButton: false,
@@ -35,21 +35,31 @@ $validLogin->setUser($FieldUser);
 $validLogin->setPassword($Fieldpass);
 $validLogin->setRol($UserRol);
               if($UserRol == "Customer") {
-                    require_once("../Cookies/CookieStudent.php");
+                    require_once("../Cookies/CookieCustomer.php");
                     session_start();
                     $_SESSION['user'] = $FieldUser;
                     $_SESSION['password'] = $Fieldpass;
                     $_SESSION['LastSession'] =  date("Y-n-j H:i:s");
                     $_SESSION['RolSystem'] = $UserRol;
+                    if(isset($_COOKIE['visitsCustomer'])) {
+                        $_SESSION['visits'] = $_COOKIE['visitsCustomer'];
+                    } else {
+                        $_SESSION['visits'] = 0;
+                    }
                     $validLogin->ValidateUser();
 
                 } else if($UserRol == "Administrator") {
-                    require_once("../Cookies/CookieTeacher.php");
+                    require_once("../Cookies/CookieAdministrator.php");
                     session_start();
                     $_SESSION['user'] = $FieldUser;
                     $_SESSION['password'] = $Fieldpass;
                     $_SESSION['LastSession'] =  date("Y-n-j H:i:s");
                     $_SESSION['RolSystem'] = $UserRol;
+                    if(isset($_COOKIE['visitsAdministrator'])) {
+                        $_SESSION['visits'] = $_COOKIE['visitsAdministrator'];
+                    } else {
+                        $_SESSION['visits'] = 0;
+                    }
                     $validLogin->ValidateUser();
 
                 } else if($UserRol == "Employee") {
@@ -59,6 +69,11 @@ $validLogin->setRol($UserRol);
                     $_SESSION['password'] = $Fieldpass;
                     $_SESSION['LastSession'] = date("Y-n-j H:i:s");
                     $_SESSION['RolSystem'] = $UserRol;
+                    if(isset($_COOKIE['visitsEmployee'])) {
+                        $_SESSION['visits'] = $_COOKIE['visitsEmployee'];
+                    } else {
+                        $_SESSION['visits'] = 0;
+                    }
                     $validLogin->ValidateUser();
 
                 } else if($_POST['rol']=="Select") {
