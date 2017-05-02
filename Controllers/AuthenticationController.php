@@ -41,6 +41,11 @@ $validLogin->setRol($UserRol);
                     $_SESSION['password'] = $Fieldpass;
                     $_SESSION['LastSession'] =  date("Y-n-j H:i:s");
                     $_SESSION['RolSystem'] = $UserRol;
+                    if(isset($_COOKIE['visitsStudent'])) {
+                        $_SESSION['visits'] = $_COOKIE['visitsStudent'];
+                    } else {
+                        $_SESSION['visits'] = 0;
+                    }
                     $validLogin->ValidateUser();
 
                 } else if($UserRol == "Administrator") {
@@ -50,6 +55,11 @@ $validLogin->setRol($UserRol);
                     $_SESSION['password'] = $Fieldpass;
                     $_SESSION['LastSession'] =  date("Y-n-j H:i:s");
                     $_SESSION['RolSystem'] = $UserRol;
+                    if(isset($_COOKIE['visitsTeacher'])) {
+                        $_SESSION['visits'] = $_COOKIE['visitsTeacher'];
+                    } else {
+                        $_SESSION['visits'] = 0;
+                    }
                     $validLogin->ValidateUser();
 
                 } else if($UserRol == "Employee") {
@@ -59,6 +69,11 @@ $validLogin->setRol($UserRol);
                     $_SESSION['password'] = $Fieldpass;
                     $_SESSION['LastSession'] = date("Y-n-j H:i:s");
                     $_SESSION['RolSystem'] = $UserRol;
+                    if(isset($_COOKIE['visitsEmployee'])) {
+                        $_SESSION['visits'] = $_COOKIE['visitsEmployee'];
+                    } else {
+                        $_SESSION['visits'] = 0;
+                    }
                     $validLogin->ValidateUser();
 
                 } else if($_POST['rol']=="Select") {

@@ -49,11 +49,11 @@
                         <label for="inputPassword" >Password</label><br>
                         <input type="password" id="inputPassword"  class="form-control" name="key" placeholder="Password">
                         <div class="checkbox">
-                            <select name="rol" id="">
+                            <select class="selectpicker" name="rol">
                                 <option>Select</option>
-                                <option>Customer</option>
-                                <option>Administrator</option>
-                                <option>Employee</option>   
+                                <option value="Customer">Customer</option>
+                                <option value="Administrator">Administrator</option>
+                                <option value="Employee">Employee</option>   
                             </select>
                         <label>
                             <input type="checkbox" value="remember-me"> Remember me

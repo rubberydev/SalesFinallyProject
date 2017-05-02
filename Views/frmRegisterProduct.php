@@ -14,13 +14,22 @@
     require_once('../Cookies/Validar.php');
      echo "<div class='panel panel-default'><div class='panel-body'>";
         if($_SESSION['RolSystem'] == "Customer"){
-            echo "<strong>visits of customer: </strong>".$_COOKIE['visitsStudent'];
+            $_SESSION['visits']++;
+            $visits = $_SESSION['visits'];
+            echo "<strong>visits of customer: </strong>".$_SESSION['visits'];
+            setcookie('visitsStudent', $visits, time()+365*24*60*60);
             require_once("../Cookies/Time2.php");
         } else if($_SESSION['RolSystem'] == "Administrator") {
-        echo "<strong>visits of Administrator: </strong>".$_COOKIE['visitsTeacher'];
+            $_SESSION['visits']++;
+            $visits = $_SESSION['visits'];
+        echo "<strong>visits of Administrator: </strong>".$_SESSION['visits'];
+        setcookie('visitsTeacher', $visits, time()+365*24*60*60);
             require_once("../Cookies/Time.php");         
         } else if($_SESSION['RolSystem'] == "Employee") {
-        echo "<strong>visits of employee: </strong>".$_COOKIE['visitEmployee'];
+            $_SESSION['visits']++;
+            $visits = $_SESSION['visits'];
+        echo "<strong>visits of employee: </strong>".$_SESSION['visits'];
+        setcookie('visitsEmployee', $visits, time()+365*24*60*60);
             require_once("../Cookies/Time.php");         
         }
     echo " </div></div></div><div class='col-sm-4 col-sm-offset-3'>";

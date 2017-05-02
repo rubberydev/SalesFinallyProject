@@ -10,7 +10,4 @@ $instUser->setUser($FieldUser);
 $instUser->setPassword($Fieldpass);
 $instUser->setRol($FieldRol);
 $instUser->registerUser();
-
-
-
 ?>
