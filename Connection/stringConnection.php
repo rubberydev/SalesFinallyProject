@@ -8,7 +8,7 @@
      <script> 
             function Error(){
                swal({
-                title: "There was an error when the system tried connect to database!",
+                title: "There was an error when the system tried to connect to the database!",
                 text: "Try again",
                 type: "warning",
                 timer: 5000,
@@ -17,10 +17,7 @@
                 function(){
                  window.location.href="../Login.php";
                 });
-                
-            } 
-
-        
+            }
     </script>
 </head>
 <body> 

@@ -17,11 +17,11 @@
             <form action="../Controllers/AccountController.php" method="POST">
                 <div class="form-group">
                     <label for="user">User: </label>
-                    <input type="text" class="form-control" name="user" placeholder="name user" required/>
+                    <input type="text" class="form-control" name="user" placeholder="Username" required/>
                 </div>
                 <div class="form-group">
-                    <label for="key">Key: </label>
-                    <input type="password" class="form-control" name="key" placeholder="password" required/>
+                    <label for="password">Password: </label>
+                    <input type="password" class="form-control" name="key" placeholder="Password" required/>
                 </div>
                 <label for="rol">Choose you rol into the system: </label>
                 <select class="selectpicker" name="rol">                                

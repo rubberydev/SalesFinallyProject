@@ -10,8 +10,8 @@
     <script>
        function SuccesConnection(){
              swal({
-                    title: "your data has been saved successfully!!!",
-                    text: "Now, you can enter at system!",
+                    title: "Your data has been saved successfully!!!",
+                    text: "Now, you can enter the system!",
                     type: "success",
                     showCancelButton: false,
                     confirmButtonColor: "#DD6B55",
@@ -25,8 +25,8 @@
 
         function BadRequest(){
              swal({
-                    title: "you couldn't save this user!!!",
-                    text: "if you have any question can contact to system administration!",
+                    title: "You couldn't register this user!!!",
+                    text: "If you have any question can contact the system administrator!",
                     type: "warning",
                     showCancelButton: false,
                     confirmButtonColor: "#DD6B55",
@@ -40,8 +40,8 @@
 
      function WrongUser(){
              swal({
-                    title: "Incorrect data...you don't have a user or password valid",
-                    text: "you should check your data or sign up and try it again!",
+                    title: "Incorrect data...you don't have a valid username or password.",
+                    text: "You should check your information, or sign up, and try again!",
                     type: "warning",
                     showCancelButton: false,
                     confirmButtonColor: "#DD6B55",
@@ -52,8 +52,6 @@
                     window.location.href='../Login.php';
                     });
             }
-    
-    
     </script>
 </head>
 <body>
@@ -96,7 +94,6 @@
               print "<script>BadRequest();</script>";
             }
         }
-     
 
         public function ValidateUser(){
             $SQLquery = "SELECT * FROM Users WHERE nameUser = '$this->UserName' AND passwd = '$this->Password' AND Role = '$this->TypeUser'";
@@ -109,7 +106,6 @@
                          $this->con->close();
                          header("location:../Views/SectionMain.php");
                      }
-
                 }               
             
             $this->con->close();
@@ -117,7 +113,6 @@
             print "<script>WrongUser();</script>";
             }
       }
-
      }
     ?>
     <script src="js/bootstrap.min.js"></script>

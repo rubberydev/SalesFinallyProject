@@ -8,8 +8,8 @@
      <script> 
             function Error(){
                swal({
-                title: "There was an error when the system tried connect to database!",
-                text: "Try it again",
+                title: "There was an error when the system tried connect to the database!",
+                text: "Try again",
                 timer: 2000,
                 showConfirmButton: false
                 });
@@ -17,7 +17,7 @@
 
             function Error2(){
                swal({
-                title: "Closed session!",
+                title: "Session Closed!",
                 text: "Bye",
                 timer: 5000,
                 showConfirmButton: false
@@ -25,7 +25,7 @@
             } 
              function Error3(){
                swal({
-                title: "You must select a valid user",
+                title: "You must sign in with a valid user",
                 text: "ACCESS DENIED!",
                 timer: 5000,
                 showConfirmButton: false
@@ -45,12 +45,11 @@
                     <form class="form-signin" action="Controllers/AuthenticationController.php" method="POST">
                         <h2 class="form-signin-heading">Sport Wear Clothing <strong>!!!</strong></h2>
                         <label for="inputEmail" >User</label><br>
-                        <input type="text" id="inputEmail"  name="user" class="form-control" placeholder="user name" ><br>
+                        <input type="text" id="inputEmail"  name="user" class="form-control" placeholder="Username" ><br>
                         <label for="inputPassword" >Password</label><br>
                         <input type="password" id="inputPassword"  class="form-control" name="key" placeholder="Password">
                         <div class="checkbox">
                             <select class="selectpicker" name="rol">
-                                <option>Select</option>
                                 <option value="Customer">Customer</option>
                                 <option value="Administrator">Administrator</option>
                                 <option value="Employee">Employee</option>   

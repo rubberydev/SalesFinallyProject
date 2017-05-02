@@ -16,20 +16,20 @@
         if($_SESSION['RolSystem'] == "Customer"){
             $_SESSION['visits']++;
             $visits = $_SESSION['visits'];
-            echo "<strong>visits of customer: </strong>".$_SESSION['visits'];
-            setcookie('visitsStudent', $visits, time()+365*24*60*60);
+            echo "<strong>Visits of customer: </strong>".$_SESSION['visits'];
+            setcookie('visitsCustomer', $visits, time()+365*24*60*60);
             require_once("../Cookies/Time2.php");
         } else if($_SESSION['RolSystem'] == "Administrator") {
             $_SESSION['visits']++;
             $visits = $_SESSION['visits'];
-        echo "<strong>visits of Administrator: </strong>".$_SESSION['visits'];
-        setcookie('visitsTeacher', $visits, time()+365*24*60*60);
+            echo "<strong>Visits of Administrator: </strong>".$_SESSION['visits'];
+            setcookie('visitsAdministrator', $visits, time()+365*24*60*60);
             require_once("../Cookies/Time.php");         
         } else if($_SESSION['RolSystem'] == "Employee") {
             $_SESSION['visits']++;
             $visits = $_SESSION['visits'];
-        echo "<strong>visits of employee: </strong>".$_SESSION['visits'];
-        setcookie('visitsEmployee', $visits, time()+365*24*60*60);
+            echo "<strong>Visits of employee: </strong>".$_SESSION['visits'];
+            setcookie('visitsEmployee', $visits, time()+365*24*60*60);
             require_once("../Cookies/Time.php");         
         }
     echo " </div></div></div><div class='col-sm-4 col-sm-offset-3'>";
@@ -76,7 +76,6 @@
   </div>
 </div> 
 </section>    
-    
     <script src="../js/jquery-3.1.1.js"></script>
     <script src="js/bootstrap.min.js"></script>
  </body>

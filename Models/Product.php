@@ -5,13 +5,12 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/sweetalert.css">
     
-    
     <title>Product</title>
     <script>
          function ProductRegistered(name){
                swal({
                     title: "Done!",
-                    text: "product: "+name+" has been saved successfully",
+                    text: "Product: "+name+" has been saved successfully.",
                     type: "success",
                     showCancelButton: false,
                     confirmButtonColor: "green",
