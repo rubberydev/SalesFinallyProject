@@ -15,4 +15,5 @@ $objProduct->setQuantity($quantity);
 $objProduct->setCost($cost);
 
 $objProduct->registerProduct();
+
 ?>

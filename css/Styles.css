@@ -1,8 +1,9 @@
+
+
 header{
-   background-color:cadetblue;
-   margin-left:-15px;
-   padding: 45px;
-   width:100%;
+   margin:0px;
+   background-color:cadetblue; 
+   padding: 55px;   
    font-weight:bolder;
    font-family:  sans-serif, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', Verdana;
    border-radius:0px;
@@ -19,7 +20,7 @@ section{
 
 body{
     background-color: lightgray;
-    margin:0px;
+    margin:10px;
 }
 
 

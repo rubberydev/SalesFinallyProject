@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Main menu</title>
+    <title>Main menu</title> 
+    <link rel="stylesheet" href="../css/normalize.css">   
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/Styles.css">   
 </head>
@@ -18,9 +19,7 @@
         </header>
       </div>
   </div>
-</div>
-<section>
- <div class="container-fluid">
+<section> 
     <div class="row">
        <div class="col-sm-4">
            <ul class="nav nav-tabs">
@@ -30,12 +29,20 @@
           </ul>
         </div>
     </div>
- </div>  
+ </div> 
+  
   <?php 
-  require("../Connection/stringConnection.php"); 
+  require("../Models/Product.php"); 
+  $InstanciaProduct = new Product();
+  $InstanciaProduct->ShowListProduct();
+
+   
+    
+  
        ?>                 
  </section>
      <script src="../js/bootstrap.min.js"></script>
+      
      <a href="../Cookies/CloseSession.php" class="btn btn-danger">Close session</a>
 </body>
 </html>

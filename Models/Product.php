@@ -76,11 +76,49 @@ class Product {
         }
          $this->con->close();
     }
-}
 
+
+        public function ShowListProduct(){
+            $QueryResult = "SELECT * FROM tblproductos";
+            $statement = $this->con->query($QueryResult);
+        ?>
+        <table class="table table-striped table-hover table-responsive table-bordered">
+            <thead>
+              <tr>
+                 <th>Id Product</th>
+                 <th>Name</th>
+                 <th>Description</th>
+                 <th>Quantity</th>
+                 <th>Cost</th>
+                 <th><th>
+              </tr>
+            </thead>
+            <tbody>
+            <?php
+                 if($statement->num_rows>0){
+                     while($log = $statement->fetch_assoc()){
+                         echo "<tr>";
+                           echo "<td>".$log['ProductID']." </td>";
+                           echo "<td>".$log['name']." </td>";
+                           echo "<td>".$log['description']." </td>";
+                           echo "<td>".$log['quantity']." </td>";
+                           echo "<td>".$log['cost']." </td>";
+                           echo "<td><a class='btn btn-warning' data-toggle='tooltip' title='Editar' href='../Views/Opcion2.php'><span class='glyphicon glyphicon-edit'></span></a></td>";
+                           echo "<td><a class='btn btn-danger' data-toggle='tooltip' title='Borrar' href='../Views/Opcion2.php'><span class='glyphicon glyphicon-trash'></span></a></td>";
+                         echo "<tr>";
+                     }
+                 }
+             ?>
+           </tbody>                  
+         </table>
+          <?php
+        
+        }
+}
 ?>
  <script src="../js/jquery-3.1.1.js"></script>
  <script src="js/bootstrap.min.js"></script>
  <script src="../js/sweetalert.min.js"></script>
+ <script src="../js/Tooltip.js"></script>
 </body>
 </html>
