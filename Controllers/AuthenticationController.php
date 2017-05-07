@@ -34,46 +34,37 @@ $validLogin = new SignUp();
 $validLogin->setUser($FieldUser);
 $validLogin->setPassword($Fieldpass);
 $validLogin->setRol($UserRol);
-              if($UserRol == "Customer") {
-                    require_once("../Cookies/CookieCustomer.php");
+              if($UserRol == "Customer") { 
+                                       
                     session_start();
                     $_SESSION['user'] = $FieldUser;
                     $_SESSION['password'] = $Fieldpass;
+                    $_SESSION['control'] = true;
+                    $_SESSION['control2'] = true;
                     $_SESSION['LastSession'] =  date("Y-n-j H:i:s");
-                    $_SESSION['RolSystem'] = $UserRol;
-                    if(isset($_COOKIE['visitsCustomer'])) {
-                        $_SESSION['visits'] = $_COOKIE['visitsCustomer'];
-                    } else {
-                        $_SESSION['visits'] = 0;
-                    }
+                    $_SESSION['RolSystem'] = $UserRol;                   
                     $validLogin->ValidateUser();
 
-                } else if($UserRol == "Administrator") {
-                    require_once("../Cookies/CookieAdministrator.php");
+                } else if($UserRol == "Administrator") { 
+                    require_once("../Cookies/CookieVisits.php");                   
                     session_start();
                     $_SESSION['user'] = $FieldUser;
                     $_SESSION['password'] = $Fieldpass;
+                     $_SESSION['control'] = true;
+                     $_SESSION['control2'] = true;
                     $_SESSION['LastSession'] =  date("Y-n-j H:i:s");
-                    $_SESSION['RolSystem'] = $UserRol;
-                    if(isset($_COOKIE['visitsAdministrator'])) {
-                        $_SESSION['visits'] = $_COOKIE['visitsAdministrator'];
-                    } else {
-                        $_SESSION['visits'] = 0;
-                    }
+                    $_SESSION['RolSystem'] = $UserRol;                   
                     $validLogin->ValidateUser();
 
-                } else if($UserRol == "Employee") {
-                    require_once("../Cookies/CookieEmployee.php");
+                } else if($UserRol == "Employee") { 
+                    require_once("../Cookies/CookieVisits.php");                   
                     session_start();
                     $_SESSION['user'] = $FieldUser;
                     $_SESSION['password'] = $Fieldpass;
+                    $_SESSION['control'] = true;
+                    $_SESSION['control2'] = true;
                     $_SESSION['LastSession'] = date("Y-n-j H:i:s");
-                    $_SESSION['RolSystem'] = $UserRol;
-                    if(isset($_COOKIE['visitsEmployee'])) {
-                        $_SESSION['visits'] = $_COOKIE['visitsEmployee'];
-                    } else {
-                        $_SESSION['visits'] = 0;
-                    }
+                    $_SESSION['RolSystem'] = $UserRol;                    
                     $validLogin->ValidateUser();
 
                 } else if($_POST['rol']=="Select") {

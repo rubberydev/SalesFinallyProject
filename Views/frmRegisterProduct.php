@@ -11,27 +11,40 @@
     <div class="row">
       <div class="col-sm-5">
      <?php
+     
     require_once('../Cookies/Validar.php');
      echo "<div class='panel panel-default'><div class='panel-body'>";
-        if($_SESSION['RolSystem'] == "Customer"){
-            $_SESSION['visits']++;
-            $visits = $_SESSION['visits'];
-            echo "<strong>Visits of customer: </strong>".$_SESSION['visits'];
-            setcookie('visitsCustomer', $visits, time()+365*24*60*60);
+        if($_SESSION['RolSystem'] == "Customer" && $_SESSION['control'] == false){
+             echo "<strong>Your current visit start at: </strong>". $_COOKIE['LastVisitCustomer']. "<strong> dear customer</strong>"; 
+        }else if ($_SESSION['RolSystem'] == "Administrator" && $_SESSION['control'] == false){
+             echo "<strong>Your current visit start at: </strong>". $_COOKIE['LastVisitAdministrator']."<strong> dear Administrator</strong>";
+        }else if ($_SESSION['RolSystem'] == "Employee" && $_SESSION['control'] == false){
+            echo "<strong>Your current visit start at: </strong>". $_COOKIE['LastVisitEmployee']." <strong>dear Employee</strong>";
+        } 
+
+
+        if($_SESSION['RolSystem'] == "Customer" && $_SESSION['control'] == true){ 
+            $_SESSION['control'] = false;           
+            echo "<strong>Date your last visit dear customer: </strong>". $_COOKIE['LastVisitCustomer']; 
+            $LastDate =  date("Y-n-j H:i:s");  
+            setcookie('LastVisitCustomer', $LastDate ,time()+365*24*60*60);                    
             require_once("../Cookies/Time2.php");
-        } else if($_SESSION['RolSystem'] == "Administrator") {
-            $_SESSION['visits']++;
-            $visits = $_SESSION['visits'];
-            echo "<strong>Visits of Administrator: </strong>".$_SESSION['visits'];
-            setcookie('visitsAdministrator', $visits, time()+365*24*60*60);
+        } else if($_SESSION['RolSystem'] == "Administrator" && $_SESSION['control'] == true) {  
+             $_SESSION['control'] = false;           
+            echo "<strong>Your last visit dear Administrator: </strong>". $_COOKIE['LastVisitAdministrator']; 
+            $LastDate =  date("Y-n-j H:i:s");  
+            setcookie('LastVisitAdministrator', $LastDate ,time()+365*24*60*60);
+
             require_once("../Cookies/Time.php");         
-        } else if($_SESSION['RolSystem'] == "Employee") {
-            $_SESSION['visits']++;
-            $visits = $_SESSION['visits'];
-            echo "<strong>Visits of employee: </strong>".$_SESSION['visits'];
-            setcookie('visitsEmployee', $visits, time()+365*24*60*60);
+        } else if($_SESSION['RolSystem'] == "Employee" && $_SESSION['control'] == true) {  
+             $_SESSION['control'] = false;           
+            echo "<strong>Your last visit dear employee: </strong>". $_COOKIE['LastVisitEmployee']; 
+            $LastDate =  date("Y-n-j H:i:s");  
+            setcookie('LastVisitEmployee', $LastDate ,time()+365*24*60*60);
+            
             require_once("../Cookies/Time.php");         
         }
+        
     echo " </div></div></div><div class='col-sm-4 col-sm-offset-3'>";
     echo "<a href='SectionMain.php' class='btn btn-primary'><span class='glyphicon glyphicon-arrow-left'></span> Back to main Section</a>
     <a href='../Cookies/CloseSession.php' class='btn btn-danger'>Close session <span class='glyphicon glyphicon-off'></span></a>";

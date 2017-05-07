@@ -11,7 +11,9 @@ header{
 }
 
 
-
+#container-table{
+    margin:20px;
+}
 section{
     background-color: lightgray;
     margin:0px;

@@ -16,6 +16,20 @@
           require("../Cookies/Validar.php");
           echo $_SESSION['RolSystem'];
           ?>!!</h1>
+          <?php 
+          if($_SESSION['control2'] == true){
+               $_SESSION['control2'] = false;
+               require_once("../Cookies/CookieVisits.php");
+               echo "<strong>Visits of users: </strong>".$_COOKIE['Countvisits'];  
+          }else{
+              echo "<strong>Visits of users: </strong>".$_COOKIE['Countvisits']; 
+          }     
+
+          
+          ?>
+
+                 
+            
         </header>
       </div>
   </div>
@@ -30,19 +44,19 @@
         </div>
     </div>
  </div> 
-  
+ 
   <?php 
+  
   require("../Models/Product.php"); 
   $InstanciaProduct = new Product();
-  $InstanciaProduct->ShowListProduct();
-
-   
-    
+  $InstanciaProduct->ShowListProduct();   
   
-       ?>                 
+       ?> 
+
  </section>
      <script src="../js/bootstrap.min.js"></script>
-      
-     <a href="../Cookies/CloseSession.php" class="btn btn-danger">Close session</a>
+    <div id="container-table">
+        <a href="../Cookies/CloseSession.php" class="btn btn-danger">Close session</a>
+    </div>
 </body>
 </html>
