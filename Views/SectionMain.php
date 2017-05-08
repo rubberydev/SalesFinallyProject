@@ -24,12 +24,7 @@
           }else{
               echo "<strong>Visits of users: </strong>".$_COOKIE['Countvisits']; 
           }     
-
-          
           ?>
-
-                 
-            
         </header>
       </div>
   </div>
@@ -46,11 +41,9 @@
  </div> 
  
   <?php 
-  
   require("../Models/Product.php"); 
   $InstanciaProduct = new Product();
   $InstanciaProduct->ShowListProduct();   
-  
        ?> 
 
  </section>

@@ -170,7 +170,7 @@ class Product {
                  if($statement->num_rows>0){
                      while($log = $statement->fetch_assoc()){
                          echo "<tr>";
-                           echo "<td>".$log['ProductID']." </td>";
+                           echo "<td>".$log['productID']." </td>";
                            echo "<td>".$log['name']." </td>";
                            echo "<td>".$log['description']." </td>";
                            echo "<td>".$log['quantity']." </td>";

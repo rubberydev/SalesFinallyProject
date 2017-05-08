@@ -35,7 +35,7 @@ $validLogin->setUser($FieldUser);
 $validLogin->setPassword($Fieldpass);
 $validLogin->setRol($UserRol);
               if($UserRol == "Customer") { 
-                                       
+                    require_once("../Cookies/CookieVisits.php");                   
                     session_start();
                     $_SESSION['user'] = $FieldUser;
                     $_SESSION['password'] = $Fieldpass;

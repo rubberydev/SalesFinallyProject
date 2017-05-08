@@ -50,6 +50,7 @@
                         <input type="password" id="inputPassword"  class="form-control" name="key" placeholder="Password">
                         <div class="checkbox">
                             <select class="selectpicker" name="rol">
+                                <option value="Select">Select</option>
                                 <option value="Customer">Customer</option>
                                 <option value="Administrator">Administrator</option>
                                 <option value="Employee">Employee</option>   
