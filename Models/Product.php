@@ -21,7 +21,22 @@
                     function(){
                     window.location.href='../Views/frmRegisterProduct.php';
                     });
-            } 
+            }
+
+            function ProductDeleted(id, name){
+               swal({
+                    title: "Done!",
+                    text: "Product: "+name+" with ID "+id+" has been deleted successfully.",
+                    type: "success",
+                    showCancelButton: false,
+                    confirmButtonColor: "green",
+                    confirmButtonText: "OK",
+                    closeOnConfirm: false
+                    },
+                    function(){
+                    window.location.href='../Views/SectionMain.php';
+                    });
+            }  
 
             function Update(){
                swal({
@@ -90,28 +105,9 @@ class Product {
         $this->cost = $cos;
     }
 
-    public function getIdentification() {
-         return $this->productID;
-    }
-
-    public function getName() {
-         return $this->name;
-    }
-
-    public function getDescription() {
-         return $this->description;
-    }
-
-    public function getQuantity() {
-         return $this->quantity;
-    }
-
-    public function getCost() {
-         return $this->cost;
-    }
     public function registerProduct() {
-        $insertSQL = "INSERT INTO tblproductos(productID, name, description, quantity, cost) VALUES(
-            '$this->productID','$this->name','$this->description','$this->quantity', '$this->cost')";
+        $insertSQL = "INSERT INTO tblproductos(productID, name, description, quantity, cost, categID, customID) VALUES(
+            '$this->productID','$this->name','$this->description','$this->quantity', '$this->cost', '1', '1')";
 
         $res = $this->con->query($insertSQL);
 
@@ -135,11 +131,25 @@ class Product {
                 echo "<br>".$res["name"]."<br>".$res["description"]."<br>".$res["quantity"]."<br>".$res["cost"];
             }
         }
-        //return $statement;
+    }
+
+    public function DeleteProductById($id, $name) {
+        $deleteSQL = "DELETE FROM tblproductos WHERE productID = '$id'";
+        $sqlResult = $this->con->query($deleteSQL);
+
+        if($sqlResult) {
+            echo '<script>ProductDeleted("'.$id.'","'.$name.'");</script>';
+        } else {
+            echo "Deletion failed.";
+            exit();
+        }
+         $this->con->close();
     }
 
     public function UpdateProduct(){
-        $Set = "UPDATE tblproductos SET name = '$this->name', description = '$this->description', quantity = '$this->quantity', cost = '$this->cost' WHERE productID = $this->productID";
+        $Set = "UPDATE tblproductos 
+        SET name = '$this->name', description = '$this->description', quantity = '$this->quantity', cost = '$this->cost', categID = '1', consumID = '1' 
+        WHERE productID = '$this->productID'";
         
         if($this->con->query($Set) == true){
             echo "<script>Update();</script>";
@@ -148,11 +158,11 @@ class Product {
         }
         $this->con->close();
     }
-        public function ShowListProduct(){
+    
+    public function ShowListProduct(){
             $QueryResult = "SELECT * FROM tblproductos";
             $statement = $this->con->query($QueryResult);
         ?>
-        <!--<form action="../Controllers/UpdateController.php" method="post">!-->
         <div id="container-table">
         <table class="table table-striped table-hover table-responsive table-bordered">
             <thead>
@@ -162,33 +172,33 @@ class Product {
                  <th>Description</th>
                  <th>Quantity</th>
                  <th>Cost</th>
+                 <th>Category</th>
                  <th><th>
               </tr>             
             </thead>
             <tbody>
             <?php
-                 if($statement->num_rows>0){
-                     while($log = $statement->fetch_assoc()){
-                         echo "<tr>";
-                           echo "<td>".$log['productID']." </td>";
-                           echo "<td>".$log['name']." </td>";
-                           echo "<td>".$log['description']." </td>";
-                           echo "<td>".$log['quantity']." </td>";
-                           echo "<td>".$log['cost']." </td>";
-                           //echo "<td><input  type='submit' class='btn btn-warning' value='Edit' data-toggle='tooltip' title='Editar'/></td>";
-                           echo "<td><a  class='btn btn-warning' data-toggle='tooltip' title='Editar' href='../Views/Opcion2.php'><span class='glyphicon glyphicon-edit'></span></a></td>";
-                           echo "<td><a class='btn btn-danger' data-toggle='tooltip' title='Borrar' href='../Views/Opcion2.php'><span class='glyphicon glyphicon-trash'></span></a></td>";
-                         echo "<tr>";
-                     }
-                     $this->con->close();
-                 }
+            if($statement->num_rows > 0){
+                while($log = $statement->fetch_assoc()){
+                    echo "<tr><form action='../Views/Opcion2.php' method='post'>";
+                    echo "<td><input type='number' name='proID' value='".$log['productID']."' readonly /></td>";
+                    echo "<td><input type='text' name='proName' value='".$log['name']."' readonly /></td>";
+                    echo "<td><input type='text' name='proDes' value='".$log['description']."' readonly /></td>";
+                    echo "<td><input type='number' name='proQuan' value='".$log['quantity']."' readonly /></td>";
+                    echo "<td><input type='number' name='proCost' value='".$log['cost']."' readonly /></td>";
+                    echo "<td><input type='text' name='proCateg' value='".$log['categID']."' readonly /></td>";
+                    //echo "<td><input  type='submit' class='btn btn-warning' value='Edit' data-toggle='tooltip' title='Editar'/></td>";
+                    echo "<td><button type='submit' class='glyphicon glyphicon-edit btn btn-warning' data-toggle='tooltip' title='Edit' /></td>";
+                    echo "<td><button type='submit' class='glyphicon glyphicon-trash btn btn-danger' data-toggle='tooltip' title='Delete' formaction='../Controllers/DeleteController.php' /></td>";
+                    echo "</form></tr>";
+                }
+                 $this->con->close();
+             }
              ?>
            </tbody>                  
          </table>
          </div>
-         <!--</form>!-->
           <?php
-        
         }
 }
 ?>

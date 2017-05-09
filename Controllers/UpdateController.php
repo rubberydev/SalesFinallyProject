@@ -2,12 +2,10 @@
 <?php
 require("../Models/Product.php");
 
-//$proid = $_POST['ProductID'];
-//echo($proid);
 $proid = $_POST['prodID'];
 $nam = filter_input(INPUT_POST, 'nam', FILTER_SANITIZE_SPECIAL_CHARS);
-$descrip = filter_input(INPUT_POST, 'desc', FILTER_SANITIZE_SPECIAL_CHARS);
-$quant= $_POST['quant'];
+$descrip = filter_input(INPUT_POST, 'des', FILTER_SANITIZE_SPECIAL_CHARS);
+$quant= $_POST['quan'];
 $cos = $_POST['cos'];
 
 $UpdProduct = new Product();

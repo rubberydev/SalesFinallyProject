@@ -21,7 +21,7 @@
                $_SESSION['control2'] = false;
                require_once("../Cookies/CookieVisits.php");
                echo "<strong>Visits of users: </strong>".$_COOKIE['Countvisits'];  
-          }else{
+          } else {
               echo "<strong>Visits of users: </strong>".$_COOKIE['Countvisits']; 
           }     
           ?>

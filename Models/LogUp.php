@@ -69,9 +69,7 @@
         }
 
         public function setUser($user){
-
             $this->UserName = $user;
-
         }        
 
         public function setPassword($pass){

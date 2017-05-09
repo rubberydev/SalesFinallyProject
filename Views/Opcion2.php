@@ -8,7 +8,12 @@
     <link rel="stylesheet" href="../css/Styles.css">
 </head>
 <body>
-    <?php   
+    <?php
+    $prodID = intval($_POST['proID']);
+    $name = $_POST['proName'];
+    $des = $_POST['proDes'];
+    $quan = intval($_POST['proQuan']);
+    $cost = intval($_POST['proCost']);
   /*require('../Cookies/Validar.php');
      
      if($_SESSION['RolSystem'] == "Student"){      
@@ -31,15 +36,24 @@
                 <div class="col-sm-5">
                     <div class="form-group">
                         <label>Product ID: </label><br>
-                        <input type="text"  class="form-control" name="prodID" required/>
+                        <input type="number"  class="form-control" name="prodID" value="
+                        <?php
+                            echo $prodID;
+                        ?>" required />
                     </div>
                     <div class="form-group">
                         <label>Name: </label><br>
-                        <input type="text" class="form-control" placeholder="Name" name="nam" required/>
+                        <input type="text" class="form-control" placeholder="Name" name="nam" value="
+                        <?php
+                            echo $name;
+                        ?>" required/>
                     </div>
                     <div class="form-group">
                         <label>Description: </label><br>
-                        <textarea name="desc" cols="50" rows="2" required></textarea>
+                        <input type="text" name="des" value="
+                        <?php
+                            echo $des;
+                        ?>" required />
                         <!--<input type="text" class="form-control" placeholder="Description" name="description" required/>!-->
                     </div>  
                     <input type="submit" name="Send" value="Save" class="btn btn-success"/> <input type="reset" class="btn btn-danger" name="Clean"/>
@@ -47,22 +61,24 @@
               <div class="col-sm-5 col-sm-offset-2">
                     <div class="form-group">
                         <label>Quantity: </label><br>
-                        <input type="number" class="form-control" name="quant" required/>
+                        <input type="number" class="form-control" name="quan" value="
+                        <?php
+                            echo $quan;
+                        ?>" required/>
                     </div>
                     <div class="form-group">
                         <label>Cost: </label><br>                
-                        <input type="number" class="form-control" name="cos" required/></p>
+                        <input type="number" class="form-control" name="cos" value="
+                        <?php
+                            echo $cost;
+                        ?>" required/>
                     </div> 
-                </div>               
-                        
+                </div>
               </form>
           </div>
        </div> 
      </div>
   </div>
-          
-
-
 
      <script src="../js/bootstrap.min.js"></script>
      <br><a href="../Views/SectionMain.php" class="btn btn-warning">Back to main section</a>
