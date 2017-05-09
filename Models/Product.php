@@ -180,7 +180,7 @@ class Product {
             <?php
             if($statement->num_rows > 0){
                 while($log = $statement->fetch_assoc()){
-                    echo "<tr><form action='../Views/Opcion2.php' method='post'>";
+                    echo "<tr><form action='../Views/frmModifyProduct.php' method='post'>";
                     echo "<td><input type='text' name='proID' value='".$log['productID']."' readonly /></td>";
                     echo "<td><input type='text' name='proName' value='".$log['name']."' readonly /></td>";
                     echo "<td><input type='text' name='proDes' value='".$log['description']."' readonly /></td>";
