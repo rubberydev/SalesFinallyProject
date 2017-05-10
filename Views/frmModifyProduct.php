@@ -9,11 +9,11 @@
 </head>
 <body>
     <?php
-    $prodID = intval($_POST['proID']);
+    $prodID = $_POST['proID'];
     $name = $_POST['proName'];
     $des = $_POST['proDes'];
-    $quan = intval($_POST['proQuan']);
-    $cost = intval($_POST['proCost']);
+    $quan = $_POST['proQuan'];
+    $cost = $_POST['proCost'];
   /*require('../Cookies/Validar.php');
      
      if($_SESSION['RolSystem'] == "Student"){      

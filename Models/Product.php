@@ -147,13 +147,11 @@ class Product {
     }
 
     public function UpdateProduct(){
-        $Set = "UPDATE tblproductos 
-        SET name = '$this->name', description = '$this->description', quantity = '$this->quantity', cost = '$this->cost', categID = '1', consumID = '1' 
-        WHERE productID = '$this->productID'";
+        $Set = "UPDATE tblproductos SET name = '$this->name', description = '$this->description', quantity = '$this->quantity', cost = '$this->cost', categID = 1, customID = 1 WHERE productID = '$this->productID'";
         
-        if($this->con->query($Set) == true){
+        if($this->con->query($Set)){
             echo "<script>Update();</script>";
-        }else{
+        } else {
             echo "<script>ErrorUpdate();</script>";
         }
         $this->con->close();
