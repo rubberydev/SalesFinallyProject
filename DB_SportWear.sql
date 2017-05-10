@@ -27,8 +27,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `Category` (
-  `CategoryID` varchar(11) NOT NULL,
-  `discount` varchar(10) CHARACTER SET utf8 COLLATE utf8_spanish_ci DEFAULT NULL
+  `CategoryID` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `CategoryName` varchar(15) CHARACTER SET utf8 COLLATE utf8_spanish_ci DEFAULT NULL,
+  `Discount` varchar(10) CHARACTER SET utf8 COLLATE utf8_spanish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -38,12 +39,13 @@ CREATE TABLE `Category` (
 --
 
 CREATE TABLE `tblproductos` (
+  `productID` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `name` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci DEFAULT NULL,
   `description` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci DEFAULT NULL,
   `quantity` varchar(10) CHARACTER SET utf8 COLLATE utf8_spanish_ci DEFAULT NULL,
   `cost` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci DEFAULT NULL,
-  `CategID` varchar(11) DEFAULT NULL,
-  `CustomID` varchar(11) DEFAULT NULL
+  `categID` varchar(11) DEFAULT NULL,
+  `customID` varchar(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -53,7 +55,7 @@ CREATE TABLE `tblproductos` (
 --
 
 CREATE TABLE `Users` (
-  `CustomerID` varchar(11) NOT NULL,
+  `CustomerID` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `NameUser` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci DEFAULT NULL,
   `passwd` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci DEFAULT NULL,
   `Role` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci DEFAULT NULL

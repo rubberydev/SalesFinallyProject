@@ -111,17 +111,15 @@ class Product {
     }
 
     public function registerProduct() {
-        $insertSQL = "INSERT INTO tblproductos(productID, name, description, quantity, cost, categID, customID) VALUES(
-            '$this->productID','$this->name','$this->description','$this->quantity', '$this->cost', '$this->category', '1')";
+        $insertSQL = "INSERT INTO tblproductos(name, description, quantity, cost, categID, customID) VALUES(
+            /*'$this->productID',*/'$this->name','$this->description','$this->quantity', '$this->cost', '$this->category', '1')";
 
         $res = $this->con->query($insertSQL);
 
         if($res) {
             echo '<script>ProductRegistered("'.$this->name.'");</script>';
-           
         } else {
-            echo "Registry failed.";
-            
+            echo "Registry failed.";            
             exit();
         }
          $this->con->close();
@@ -190,7 +188,18 @@ class Product {
                     echo "<td><input type='text' name='proQuan' value='".$log['quantity']."' readonly /></td>";
                     echo "<td><input type='text' name='proCost' value='".$log['cost']."' readonly /></td>";
                     echo "<td><input type='text' name='proCateg' value='";
-                    if($log['categID']== 1) {
+                    
+                    $cat = $log['categID'];
+                    $categResult = "SELECT CategoryName FROM Category WHERE CategoryID= '$cat'";
+                    $resCateg = $this->con->query($categResult);
+
+                    if($resCateg->num_rows > 0) {
+                        while($logCateg = $resCateg->fetch_assoc()){
+                            echo $logCateg['CategoryName'];
+                        }
+                    }
+                    
+                    /* if($log['categID']== 1) {
                         echo "T-Shirt";
                     } else if ($log['categID'] == 2) {
                         echo "Pants";
@@ -200,7 +209,7 @@ class Product {
                         echo "Accesories";
                     } else {
                         echo "Protectors";
-                    }
+                    } */
                     echo "' readonly /></td>";
                     echo "<td><button type='submit' class='glyphicon glyphicon-edit btn btn-warning' data-toggle='tooltip' title='Edit' /></td>";
                     echo "<td><button type='submit' class='glyphicon glyphicon-trash btn btn-danger' data-toggle='tooltip' title='Delete' formaction='../Controllers/DeleteController.php' /></td>";
