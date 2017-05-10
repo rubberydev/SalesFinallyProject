@@ -21,7 +21,7 @@
                $_SESSION['control2'] = false;
                require_once("../Cookies/CookieVisits.php");
                echo "<strong>Visits of users: </strong>".$_COOKIE['Countvisits'];  
-          }else{
+          } else {
               echo "<strong>Visits of users: </strong>".$_COOKIE['Countvisits']; 
           }     
           ?>
@@ -33,7 +33,7 @@
        <div class="col-sm-4">
            <ul class="nav nav-tabs">
            <li role="presentation"><a href="frmRegisterProduct.php">Register Product</a></li>
-                <li role="presentation"><a  href="Opcion2.php">Opcion2</a></li>
+                <!--<li role="presentation"><a  href="Opcion2.php">Opcion2</a></li>-->
                 <li role="presentation"><a  href="Opcion3.php">Opcion3</a></li>
           </ul>
         </div>

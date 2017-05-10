@@ -26,7 +26,7 @@
         function BadRequest(){
              swal({
                     title: "You couldn't register this user!!!",
-                    text: "If you have any question can contact the system administrator!",
+                    text: "If you have any question, contact the system administrator!",
                     type: "warning",
                     showCancelButton: false,
                     confirmButtonColor: "#DD6B55",
@@ -69,9 +69,7 @@
         }
 
         public function setUser($user){
-
             $this->UserName = $user;
-
         }        
 
         public function setPassword($pass){

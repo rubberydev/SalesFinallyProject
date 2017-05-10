@@ -67,7 +67,7 @@
                 </div>
                  <div class="form-group">
                     <label>Description: </label><br>
-                    <textarea name="description" cols="50" rows="2" required></textarea>
+                    <input type="text" name="description" required />
                     <!--<input type="text" class="form-control" placeholder="Description" name="description" required/>!-->
                 </div>  
                 <input type="submit" name="Send" value="Save" class="btn btn-success"/> <input type="reset" class="btn btn-danger" name="Clean"/>
@@ -79,7 +79,7 @@
                 </div>
                 <div class="form-group">
                     <label>Cost: </label><br>                
-                    <input type="number" class="form-control" name="cost" required/></p>
+                    <input type="number" class="form-control" name="cost" required/>
                 </div> 
             </div>               
                     
