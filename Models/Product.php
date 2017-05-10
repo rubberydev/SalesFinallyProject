@@ -38,10 +38,10 @@
                     });
             }  
 
-            function Update(){
+            function Update(name){
                swal({
                     title: "Done!",
-                    text: "Product has been updated successfully.",
+                    text: "Product "+name+" has been updated successfully.",
                     type: "success",
                     showCancelButton: false,
                     confirmButtonColor: "green",
@@ -155,7 +155,7 @@ class Product {
         $Set = "UPDATE tblproductos SET name = '$this->name', description = '$this->description', quantity = '$this->quantity', cost = '$this->cost', categID = '$this->category', customID = 1 WHERE productID = '$this->productID'";
         
         if($this->con->query($Set)){
-            echo "<script>Update();</script>";
+            echo "<script>Update('".$this->name."');</script>";
         } else {
             echo "<script>ErrorUpdate();</script>";
         }
