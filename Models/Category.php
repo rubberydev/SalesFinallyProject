@@ -35,7 +35,7 @@ class Category {
     private $conex;
 
     public function __construct() {
-        $this->conex = dbconnection::connectedDB();
+        $this->conex = dbConnection::connectedDB();
     }
 
     public function setCategoryName($name) {
@@ -88,8 +88,42 @@ class Category {
         }
         $this->conex->close(); 
     }
-}
 
+    public function ShowListCategory(){
+            $QueryResult = "SELECT * FROM Category";
+            $statement = $this->conex->query($QueryResult);
+        ?>
+        <div id="container-table">
+        <table class="table table-striped table-hover table-responsive table-bordered">
+            <thead>
+              <tr>
+                 <th>Category ID</th>
+                 <th>Category Name</th>
+                 <th>Discount</th>
+                 <th><th>
+              </tr>             
+            </thead>
+            <tbody>
+            <?php
+            if($statement->num_rows > 0){
+                while($log = $statement->fetch_assoc()){
+                    echo "<tr><form action='../Views/frmModifyProduct.php' method='post'>";
+                    echo "<td>".$log['CategoryID']."</td>";
+                    echo "<td>".$log['CategoryName']."</td>";
+                    echo "<td>".$log['discount']."</td>";
+                    //echo "<td><button type='submit' class='glyphicon glyphicon-edit btn btn-warning' data-toggle='tooltip' title='Edit' /></td>";
+                    //echo "<td><button type='submit' class='glyphicon glyphicon-trash btn btn-danger' data-toggle='tooltip' title='Delete' formaction='../Controllers/DeleteController.php' /></td>";
+                    echo "</form></tr>";
+                }
+                 $this->conex->close();
+             }
+             ?>
+           </tbody>                  
+         </table>
+         </div>
+          <?php
+        }
+}
 ?>
 </body>
 </html>

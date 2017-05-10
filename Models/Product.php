@@ -199,17 +199,6 @@ class Product {
                         }
                     }
                     
-                    /* if($log['categID']== 1) {
-                        echo "T-Shirt";
-                    } else if ($log['categID'] == 2) {
-                        echo "Pants";
-                    } else if ($log['categID'] == 3) {
-                        echo "Runners";
-                    } else if ($log['categID'] == 4) {
-                        echo "Accesories";
-                    } else {
-                        echo "Protectors";
-                    } */
                     echo "' readonly /></td>";
                     echo "<td><button type='submit' class='glyphicon glyphicon-edit btn btn-warning' data-toggle='tooltip' title='Edit' /></td>";
                     echo "<td><button type='submit' class='glyphicon glyphicon-trash btn btn-danger' data-toggle='tooltip' title='Delete' formaction='../Controllers/DeleteController.php' /></td>";
