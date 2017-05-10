@@ -79,6 +79,7 @@ class Product {
     private $description;
     private $quantity;
     private $cost;
+    private $category;
     private $con;
 
     public function __construct() {
@@ -105,9 +106,13 @@ class Product {
         $this->cost = $cos;
     }
 
+    public function setCategory($cat) {
+        $this->category = $cat;
+    }
+
     public function registerProduct() {
         $insertSQL = "INSERT INTO tblproductos(productID, name, description, quantity, cost, categID, customID) VALUES(
-            '$this->productID','$this->name','$this->description','$this->quantity', '$this->cost', '1', '1')";
+            '$this->productID','$this->name','$this->description','$this->quantity', '$this->cost', '$this->category', '1')";
 
         $res = $this->con->query($insertSQL);
 
@@ -147,7 +152,7 @@ class Product {
     }
 
     public function UpdateProduct(){
-        $Set = "UPDATE tblproductos SET name = '$this->name', description = '$this->description', quantity = '$this->quantity', cost = '$this->cost', categID = 1, customID = 1 WHERE productID = '$this->productID'";
+        $Set = "UPDATE tblproductos SET name = '$this->name', description = '$this->description', quantity = '$this->quantity', cost = '$this->cost', categID = '$this->category', customID = 1 WHERE productID = '$this->productID'";
         
         if($this->con->query($Set)){
             echo "<script>Update();</script>";
@@ -184,7 +189,19 @@ class Product {
                     echo "<td><input type='text' name='proDes' value='".$log['description']."' readonly /></td>";
                     echo "<td><input type='text' name='proQuan' value='".$log['quantity']."' readonly /></td>";
                     echo "<td><input type='text' name='proCost' value='".$log['cost']."' readonly /></td>";
-                    echo "<td><input type='text' name='proCateg' value='".$log['categID']."' readonly /></td>";
+                    echo "<td><input type='text' name='proCateg' value='";
+                    if($log['categID']== 1) {
+                        echo "T-Shirt";
+                    } else if ($log['categID'] == 2) {
+                        echo "Pants";
+                    } else if ($log['categID'] == 3) {
+                        echo "Runners";
+                    } else if ($log['categID'] == 4) {
+                        echo "Accesories";
+                    } else {
+                        echo "Protectors";
+                    }
+                    echo "' readonly /></td>";
                     echo "<td><button type='submit' class='glyphicon glyphicon-edit btn btn-warning' data-toggle='tooltip' title='Edit' /></td>";
                     echo "<td><button type='submit' class='glyphicon glyphicon-trash btn btn-danger' data-toggle='tooltip' title='Delete' formaction='../Controllers/DeleteController.php' /></td>";
                     echo "</form></tr>";

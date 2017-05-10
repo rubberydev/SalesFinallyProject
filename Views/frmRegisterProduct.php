@@ -67,8 +67,7 @@
                 </div>
                  <div class="form-group">
                     <label>Description: </label><br>
-                    <input type="text" name="description" required />
-                    <!--<input type="text" class="form-control" placeholder="Description" name="description" required/>!-->
+                    <textarea rows="2" cols="60" name="description" required></textarea>
                 </div>  
                 <input type="submit" name="Send" value="Save" class="btn btn-success"/> <input type="reset" class="btn btn-danger" name="Clean"/>
            </div>
@@ -80,6 +79,16 @@
                 <div class="form-group">
                     <label>Cost: </label><br>                
                     <input type="number" class="form-control" name="cost" required/>
+                </div>
+                <div class="form-group">
+                    <label>Category: </label><br>
+                    <select class="selectpicker" name="category">
+                        <option value="1">T-Shirt</option>
+                        <option value="2">Pants</option>
+                        <option value="3">Runners</option>
+                        <option value="4">Accesories</option>
+                        <option value="5">Protectors</option>
+                    </select>
                 </div> 
             </div>               
                     
