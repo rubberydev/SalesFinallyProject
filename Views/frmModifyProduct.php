@@ -36,22 +36,19 @@
                 <div class="col-sm-5">
                     <div class="form-group">
                         <label>Product ID: </label><br>
-                        <input type="number"  class="form-control" name="prodID" value="
-                        <?php
+                        <input type="number"  class="form-control" name="prodID" value="<?php
                             echo $prodID;
                         ?>" required />
                     </div>
                     <div class="form-group">
                         <label>Name: </label><br>
-                        <input type="text" class="form-control" placeholder="Name" name="nam" value="
-                        <?php
+                        <input type="text" class="form-control" placeholder="Name" name="nam" value="<?php
                             echo $name;
                         ?>" required/>
                     </div>
                     <div class="form-group">
                         <label>Description: </label><br>
-                        <input type="text" name="des" value="
-                        <?php
+                        <input type="text" name="des" value="<?php
                             echo $des;
                         ?>" required />
                         <!--<input type="text" class="form-control" placeholder="Description" name="description" required/>!-->
@@ -61,15 +58,13 @@
               <div class="col-sm-5 col-sm-offset-2">
                     <div class="form-group">
                         <label>Quantity: </label><br>
-                        <input type="number" class="form-control" name="quan" value="
-                        <?php
+                        <input type="number" class="form-control" name="quan" value="<?php
                             echo $quan;
                         ?>" required/>
                     </div>
                     <div class="form-group">
                         <label>Cost: </label><br>                
-                        <input type="number" class="form-control" name="cos" value="
-                        <?php
+                        <input type="number" class="form-control" name="cos" value="<?php
                             echo $cost;
                         ?>" required/>
                     </div> 
