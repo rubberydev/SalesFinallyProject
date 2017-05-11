@@ -161,6 +161,14 @@ class Product {
 
     public function UpdateProduct($prodID){
         $custID = $_SESSION['userID'];
+
+        $discSQL = "SELECT * FROM Category WHERE CategoryID = '$this->category'";
+        $discRes = $this->con->query($discSQL);
+        if($discRes->num_rows > 0) {
+            while($logDisc = $discRes->fetch_assoc()){
+                $this->cost = $this->cost - ($this->cost * $logDisc['Discount']);
+            }
+        }
         $Set = "UPDATE Products SET name = '$this->name', description = '$this->description', quantity = '$this->quantity', cost = '$this->cost', categID = '$this->category', customID = '$custID' WHERE productID = '$prodID'";
         
         if($this->con->query($Set)){
