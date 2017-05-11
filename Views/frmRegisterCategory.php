@@ -1,8 +1,8 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
  <html lang="en">
  <head>
      <meta charset="UTF-8">
-     <title>Register Product</title>
+     <title>Register Category</title>
      <link rel="stylesheet" href="../css/bootstrap.min.css">  
  </head>
  <body>
@@ -54,51 +54,25 @@
   <div class="row">     
         <div class="panel panel-default">
             <div class="panel-body">
-             <h2>Type information of product</h2><br><hr>
-                <form action="../Controllers/productController.php" method="post">
+             <h2>Type information of Category</h2><br><hr>
+                <form action="../Controllers/categoryController.php" method="post">
             <div class="col-sm-5">
                 <!--<div class="form-group">
-                    <label>Product ID: </label><br>
-                    <input type="number" class="form-control" name="productID" required/>
+                    <label>Category ID: </label><br>
+                    <input type="number" class="form-control" name="CategoryID" required/>
                 </div>-->
                 <div class="form-group">
                     <label>Name: </label><br>
-                    <input type="text" class="form-control" placeholder="Name" name="name" required/>
-                </div>
-                 <div class="form-group">
-                    <label>Description: </label><br>
-                    <textarea rows="2" cols="60" name="description" required></textarea>
-                </div>  
+                    <input type="text" class="form-control" placeholder="Name" name="CategoryName" required/>
+                </div> 
                 <input type="submit" name="Send" value="Save" class="btn btn-success"/> <input type="reset" class="btn btn-danger" name="Clean"/>
            </div>
            <div class="col-sm-5 col-sm-offset-2">
                 <div class="form-group">
-                    <label>Quantity: </label><br>
-                    <input type="number" class="form-control" name="quantity" required/>
+                    <label>Discount(%): </label><br>
+                    <input type="number" class="form-control" name="discount" value="0" required/>
                 </div>
-                <div class="form-group">
-                    <label>Cost: </label><br>                
-                    <input type="number" class="form-control" name="cost" required/>
-                </div>
-                <div class="form-group">
-                    <label>Category: </label><br>
-                    <?php
-                        require("../Models/Category.php");
-                        $category = new Category();
-                        $category->showListCategoryForm();
-                    ?>
-                    <!--Insert function to print all the categories in a Select 
-                    <select class="selectpicker" name="category">
-                        <option value="1">T-Shirt</option>
-                        <option value="2">Pants</option>
-                        <option value="3">Runners</option>
-                        <option value="4">Accesories</option>
-                        <option value="5">Protectors</option>
-                    </select>
-                    -->
-                </div> 
-            </div>               
-                    
+            </div>                
                 </form>
           </div>
        </div>    

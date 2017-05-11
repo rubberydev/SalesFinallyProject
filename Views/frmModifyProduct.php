@@ -14,6 +14,8 @@
     $des = $_POST['proDes'];
     $quan = $_POST['proQuan'];
     $cost = $_POST['proCost'];
+    $categ = $_POST['proCateg'];
+
   /*require('../Cookies/Validar.php');
      
      if($_SESSION['RolSystem'] == "Student"){      
@@ -38,7 +40,7 @@
                         <label>Product ID: </label><br>
                         <input type="number"  class="form-control" name="prodID" value="<?php
                             echo $prodID;
-                        ?>" required />
+                        ?>" required readonly />
                     </div>
                     <div class="form-group">
                         <label>Name: </label><br>
@@ -48,10 +50,9 @@
                     </div>
                     <div class="form-group">
                         <label>Description: </label><br>
-                        <input type="text" name="des" value="<?php
+                        <textarea rows="2" cols="65" name="des" required><?php
                             echo $des;
-                        ?>" required />
-                        <!--<input type="text" class="form-control" placeholder="Description" name="description" required/>!-->
+                        ?></textarea>
                     </div>  
                     <input type="submit" name="Send" value="Save" class="btn btn-success"/> <input type="reset" class="btn btn-danger" name="Clean"/>
               </div>
@@ -67,7 +68,23 @@
                         <input type="number" class="form-control" name="cos" value="<?php
                             echo $cost;
                         ?>" required/>
-                    </div> 
+                    </div>
+                    <div class="form-group">
+                        <label>Category: </label><br>
+                        <?php
+                        require("../Models/Category.php");
+                        $category = new Category();
+                        $category->showCategorySelected($categ);
+                        ?>
+
+                        <!--<select class="selectpicker" name="categ">
+                            <option value="1">T-Shirt</option>
+                            <option value="2" <?php //if($categ == 2) { echo "selected";}?>>Pants</option>
+                            <option value="3" <?php //if($categ == 3) { echo "selected";}?>>Runners</option>
+                            <option value="4" <?php //if($categ == 4) { echo "selected";}?>>Accesories</option>
+                            <option value="5" <?php //if($categ == 5) { echo "selected";}?>>Protectors</option>
+                        </select>-->
+                    </div>  
                 </div>
               </form>
           </div>

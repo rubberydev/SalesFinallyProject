@@ -81,7 +81,7 @@
         }
 
         public function registerUser(){
-            $insertSQL = "INSERT INTO Users(nameUser, passwd, Role) VALUES(
+            $insertSQL = "INSERT INTO Users(NameUser, passwd, Role) VALUES(
             '$this->UserName','$this->Password','$this->TypeUser')";
 
             $statement = $this->con->query($insertSQL);
@@ -94,13 +94,14 @@
         }
 
         public function ValidateUser(){
-            $SQLquery = "SELECT * FROM Users WHERE nameUser = '$this->UserName' AND passwd = '$this->Password' AND Role = '$this->TypeUser'";
+            $SQLquery = "SELECT * FROM Users WHERE NameUser = '$this->UserName' AND passwd = '$this->Password' AND Role = '$this->TypeUser'";
             $statement = $this->con->query($SQLquery);
 
             if($statement->num_rows > 0){
                 while($rows = $statement->fetch_assoc()){
                     //echo "user".$rows['nameUser']. "<br>key".$rows['passwd'];
-                     if($rows['nameUser'] == $this->UserName && $rows['passwd'] == $this->Password && $rows['Role']==$this->TypeUser){                                                 
+                     if($rows['NameUser'] == $this->UserName && $rows['passwd'] == $this->Password && $rows['Role']==$this->TypeUser){                                                 
+                         $_SESSION['userID'] = $rows['CustomerID'];
                          $this->con->close();
                          header("location:../Views/SectionMain.php");
                      }
