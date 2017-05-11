@@ -57,10 +57,10 @@
              <h2>Type information of product</h2><br><hr>
                 <form action="../Controllers/productController.php" method="post">
             <div class="col-sm-5">
-                <div class="form-group">
+                <!--<div class="form-group">
                     <label>Product ID: </label><br>
                     <input type="number" class="form-control" name="productID" required/>
-                </div>
+                </div>-->
                 <div class="form-group">
                     <label>Name: </label><br>
                     <input type="text" class="form-control" placeholder="Name" name="name" required/>

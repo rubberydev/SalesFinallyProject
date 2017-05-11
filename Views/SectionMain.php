@@ -5,7 +5,23 @@
     <title>Main menu</title> 
     <link rel="stylesheet" href="../css/normalize.css">   
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/Styles.css">   
+    <link rel="stylesheet" href="../css/Styles.css">
+    <script>
+         function WrongRol(){
+               swal({
+                    title: "Warning!",
+                    text: "Section not available.",
+                    type: "warning",
+                    showCancelButton: false,
+                    confirmButtonColor: "green",
+                    confirmButtonText: "OK",
+                    closeOnConfirm: false
+                    },
+                    function(){
+                    window.location.href='../Views/SectionMain.php';
+                    });
+            }
+    </script>   
 </head>
 <body>    
 <div class="container-fluid">
@@ -52,5 +68,7 @@
     <div id="container-table">
         <a href="../Cookies/CloseSession.php" class="btn btn-danger">Close session</a>
     </div>
+     
+     <script src="../js/sweetalert.min.js"></script>
 </body>
 </html>

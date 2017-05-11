@@ -29,24 +29,24 @@ SET time_zone = "+00:00";
 CREATE TABLE `Category` (
   `CategoryID` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `CategoryName` varchar(15) CHARACTER SET utf8 COLLATE utf8_spanish_ci DEFAULT NULL,
-  `Discount` varchar(10) CHARACTER SET utf8 COLLATE utf8_spanish_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `Discount` float(10) CHARACTER SET utf8 COLLATE utf8_spanish_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tblproductos`
+-- Table structure for table `Products`
 --
 
-CREATE TABLE `tblproductos` (
+CREATE TABLE `Products` (
   `productID` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `name` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci DEFAULT NULL,
   `description` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci DEFAULT NULL,
   `quantity` varchar(10) CHARACTER SET utf8 COLLATE utf8_spanish_ci DEFAULT NULL,
-  `cost` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci DEFAULT NULL,
-  `categID` varchar(11) DEFAULT NULL,
-  `customID` varchar(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `cost` float(10) CHARACTER SET utf8 COLLATE utf8_spanish_ci DEFAULT NULL,
+  `categID` int(11) DEFAULT NULL,
+  `customID` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
 
@@ -59,41 +59,38 @@ CREATE TABLE `Users` (
   `NameUser` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci DEFAULT NULL,
   `passwd` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci DEFAULT NULL,
   `Role` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `Category`
+-- Indexes for table `Products`
 --
-ALTER TABLE `Category`
-  ADD PRIMARY KEY (`CategoryID`);
-
---
--- Indexes for table `tblproductos`
---
-ALTER TABLE `tblproductos`
+ALTER TABLE `Products`
   ADD KEY `CategID` (`CategID`),
   ADD KEY `CustomID` (`CustomID`);
-
---
--- Indexes for table `Users`
---
-ALTER TABLE `Users`
-  ADD PRIMARY KEY (`CustomerID`);
 
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `tblproductos`
+-- Constraints for table `Products`
 --
-ALTER TABLE `tblproductos`
-  ADD CONSTRAINT `tblproductos_ibfk_1` FOREIGN KEY (`CategID`) REFERENCES `Category` (`CategoryID`),
-  ADD CONSTRAINT `tblproductos_ibfk_2` FOREIGN KEY (`CustomID`) REFERENCES `Users` (`CustomerID`);
+ALTER TABLE `Products`
+  ADD CONSTRAINT `Products_ibfk_1` FOREIGN KEY (`CategID`) REFERENCES `Category` (`CategoryID`),
+  ADD CONSTRAINT `Products_ibfk_2` FOREIGN KEY (`CustomID`) REFERENCES `Users` (`CustomerID`);
+
+--
+-- Base Categories for table `Category``
+--
+INSERT INTO `Category`(`CategoryName`, `Discount`) VALUES("T-Shirt", 0);
+INSERT INTO `Category`(`CategoryName`, `Discount`) VALUES("Pants", 0);
+INSERT INTO `Category`(`CategoryName`, `Discount`) VALUES("Runners", 0);
+INSERT INTO `Category`(`CategoryName`, `Discount`) VALUES("Accesories", 0);
+INSERT INTO `Category`(`CategoryName`, `Discount`) VALUES("Protectors", 0);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

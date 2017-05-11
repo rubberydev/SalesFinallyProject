@@ -51,23 +51,21 @@ class Category {
         $res = $this->conex->query($insertSQL);
 
         if($res) {
-            echo '<script>CategoryRegistered("'.$this->name.'");</script>';
-           
+            echo '<script>CategoryRegistered("'.$this->categoryName.'");</script>';
         } else {
             echo "Registry failed.";
-            
             exit();
         }
-         $this->con->close();
+         $this->conex->close();
     }
 
     public function showListCategoryForm() {
         $categResult = "SELECT * FROM Category";
-        $resCateg = $this->conex->query($categResult);
+        $discRes = $this->conex->query($categResult);
         
-        if($resCateg->num_rows > 0) {
+        if($discRes->num_rows > 0) {
             echo "<select class='selectpicker' name='category'>";
-            while($logCateg = $resCateg->fetch_assoc()){
+            while($logCateg = $discRes->fetch_assoc()){
                 $catID = $logCateg['CategoryID'];
                 $catName = $logCateg['CategoryName'];
                 echo "<option value='$catID'>$catName</option>";
@@ -77,16 +75,24 @@ class Category {
         $this->conex->close();
     }
 
-    public function showCategoryById($catID) {
-       $categResult = "SELECT * FROM Category WHERE CategoryID= '$catID'";
-        $resCateg = $this->conex->query($categResult);
+    public function showCategorySelected($categName) {
+       $categResult = "SELECT * FROM Category";
+        $discRes = $this->conex->query($categResult);
         
-        if($resCateg->num_rows > 0) {
-            while($logCateg = $resCateg->fetch_assoc()){
-                echo $logCateg['CategoryName'];
+        if($discRes->num_rows > 0) {
+            echo "<select class='selectpicker' name='category'>";
+            while($logCateg = $discRes->fetch_assoc()){
+                $catID = $logCateg['CategoryID'];
+                $catName = $logCateg['CategoryName'];
+                echo "<option value='$catID'";
+                if($catName == $categName) {
+                    echo "selected";
+                }
+                echo">$catName</option>";
             }
+            echo "</select>";
         }
-        $this->conex->close(); 
+        $this->conex->close();
     }
 
     public function ShowListCategory(){
@@ -125,5 +131,9 @@ class Category {
         }
 }
 ?>
+ <script src="../js/jquery-3.1.1.js"></script>
+ <script src="js/bootstrap.min.js"></script>
+ <script src="../js/sweetalert.min.js"></script>
+ <script src="../js/Tooltip.js"></script>
 </body>
 </html>

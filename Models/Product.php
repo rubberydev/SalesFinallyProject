@@ -72,9 +72,10 @@
 <body>
 <?php
 require('../Connection/stringConnection.php');
+require('../Cookies/Validar.php');
 
 class Product {
-    private $productID;
+    //private $productID;
     private $name;
     private $description;
     private $quantity;
@@ -86,9 +87,9 @@ class Product {
         $this->con = dbConnection::connectedDB();
     }
 
-    public function setIdentification($nroid) {
+    /*public function setIdentification($nroid) {
         $this->productID = $nroid;
-    }
+    }*/
 
     public function setName($nomb) {
         $this->name = $nomb;
@@ -111,8 +112,17 @@ class Product {
     }
 
     public function registerProduct() {
-        $insertSQL = "INSERT INTO tblproductos(name, description, quantity, cost, categID, customID) VALUES(
-            /*'$this->productID',*/'$this->name','$this->description','$this->quantity', '$this->cost', '$this->category', '1')";
+        $custID = $_SESSION['userID'];
+        
+        $discSQL = "SELECT * FROM Category WHERE CategoryID = '$this->category'";
+        $discRes = $this->con->query($discSQL);
+        if($discRes->num_rows > 0) {
+            while($logDisc = $discRes->fetch_assoc()){
+                $this->cost = $this->cost - ($this->cost * $logDisc['Discount']);
+            }
+        }
+
+        $insertSQL = "INSERT INTO Products(name, description, quantity, cost, categID, customID) VALUES('$this->name','$this->description','$this->quantity', '$this->cost', '$this->category', '$custID')";
 
         $res = $this->con->query($insertSQL);
 
@@ -126,7 +136,7 @@ class Product {
     }
 
     public function SearchProductById($id){
-        $QueryResult = "SELECT * FROM tblproductos WHERE productID = '$id'";
+        $QueryResult = "SELECT * FROM Products WHERE productID = '$id'";
         $statement = $this->con->query($QueryResult);
         
         if($statement->num_rows>0){
@@ -137,7 +147,7 @@ class Product {
     }
 
     public function DeleteProductById($id, $name) {
-        $deleteSQL = "DELETE FROM tblproductos WHERE productID = '$id'";
+        $deleteSQL = "DELETE FROM Products WHERE productID = '$id'";
         $sqlResult = $this->con->query($deleteSQL);
 
         if($sqlResult) {
@@ -149,8 +159,9 @@ class Product {
          $this->con->close();
     }
 
-    public function UpdateProduct(){
-        $Set = "UPDATE tblproductos SET name = '$this->name', description = '$this->description', quantity = '$this->quantity', cost = '$this->cost', categID = '$this->category', customID = 1 WHERE productID = '$this->productID'";
+    public function UpdateProduct($prodID){
+        $custID = $_SESSION['userID'];
+        $Set = "UPDATE Products SET name = '$this->name', description = '$this->description', quantity = '$this->quantity', cost = '$this->cost', categID = '$this->category', customID = '$custID' WHERE productID = '$prodID'";
         
         if($this->con->query($Set)){
             echo "<script>Update('".$this->name."');</script>";
@@ -161,7 +172,7 @@ class Product {
     }
     
     public function ShowListProduct(){
-            $QueryResult = "SELECT * FROM tblproductos";
+            $QueryResult = "SELECT * FROM Products";
             $statement = $this->con->query($QueryResult);
         ?>
         <div id="container-table">
@@ -200,8 +211,16 @@ class Product {
                     }
                     
                     echo "' readonly /></td>";
-                    echo "<td><button type='submit' class='glyphicon glyphicon-edit btn btn-warning' data-toggle='tooltip' title='Edit' /></td>";
-                    echo "<td><button type='submit' class='glyphicon glyphicon-trash btn btn-danger' data-toggle='tooltip' title='Delete' formaction='../Controllers/DeleteController.php' /></td>";
+                    echo "<td><button type='submit' class='glyphicon glyphicon-edit btn btn-warning' data-toggle='tooltip' title='Edit'";
+                    if($_SESSION['RolSystem'] == 'Customer') {
+                        echo "disabled";
+                    } 
+                    echo " /></td>";
+                    echo "<td><button type='submit' class='glyphicon glyphicon-trash btn btn-danger' data-toggle='tooltip' title='Delete' formaction='../Controllers/DeleteController.php' ";
+                    if($_SESSION['RolSystem'] == 'Customer' || $_SESSION['RolSystem'] == 'Employee') {
+                        echo "disabled";
+                    }
+                    echo " /></td>";
                     echo "</form></tr>";
                 }
                  $this->con->close();
