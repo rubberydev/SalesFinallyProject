@@ -3,7 +3,23 @@
  <head>
      <meta charset="UTF-8">
      <title>Register Category</title>
-     <link rel="stylesheet" href="../css/bootstrap.min.css">  
+     <link rel="stylesheet" href="../css/bootstrap.min.css">
+     <link rel="stylesheet" href="../css/sweetalert.css">
+     <script src="../js/sweetalert.min.js"></script>
+     <script> 
+            function ErrorRestrict(){
+               swal({
+                title: "Area restricted for you...",
+                text: "You can't enter this area, it's restricted!!!",
+                timer: 4000,
+                type: "warning",
+                showConfirmButton: false
+                },
+                function(){
+                    window.location.href='SectionMain.php';
+                    });
+            } 
+   </script>   
  </head>
  <body>
  <section style="margin:5px;">
@@ -14,6 +30,9 @@
      
     require_once('../Cookies/Validar.php');
      echo "<div class='panel panel-default'><div class='panel-body'>";
+     if($_SESSION['RolSystem'] == "Customer"){          
+          echo "<script>ErrorRestrict(); </script>";
+     }
         if($_SESSION['RolSystem'] == "Customer" && $_SESSION['control'] == false){
              echo "<strong>Your current visit start at: </strong>". $_COOKIE['LastVisitCustomer']. "<strong> dear customer</strong>"; 
         }else if ($_SESSION['RolSystem'] == "Administrator" && $_SESSION['control'] == false){
