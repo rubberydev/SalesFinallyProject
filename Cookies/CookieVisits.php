@@ -1,6 +1,6 @@
 <?php
  //require("Validar.php");
- if(isset($_COOKIE['Countvisits']))
+ if(($_COOKIE['Countvisits'] != null))
        { 
         //dura un año la cookie                            days*hh*mm*ss
         setcookie('Countvisits', $_COOKIE['Countvisits']+1, time()+365*24*60*60); 
