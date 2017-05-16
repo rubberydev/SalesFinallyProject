@@ -75,7 +75,6 @@ require('../Connection/stringConnection.php');
 require('../Cookies/Validar.php');
 
 class Product {
-    //private $productID;
     private $name;
     private $description;
     private $quantity;
@@ -86,10 +85,6 @@ class Product {
     public function __construct() {
         $this->con = dbConnection::connectedDB();
     }
-
-    /*public function setIdentification($nroid) {
-        $this->productID = $nroid;
-    }*/
 
     public function setName($nomb) {
         $this->name = $nomb;

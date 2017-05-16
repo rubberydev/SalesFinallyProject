@@ -76,10 +76,6 @@
              <h2>Type information of product</h2><br><hr>
                 <form action="../Controllers/productController.php" method="post">
             <div class="col-sm-5">
-                <!--<div class="form-group">
-                    <label>Product ID: </label><br>
-                    <input type="number" class="form-control" name="productID" required/>
-                </div>-->
                 <div class="form-group">
                     <label>Name: </label><br>
                     <input type="text" class="form-control" placeholder="Name" name="name" required/>
@@ -106,15 +102,6 @@
                         $category = new Category();
                         $category->showListCategoryForm();
                     ?>
-                    <!--Insert function to print all the categories in a Select 
-                    <select class="selectpicker" name="category">
-                        <option value="1">T-Shirt</option>
-                        <option value="2">Pants</option>
-                        <option value="3">Runners</option>
-                        <option value="4">Accesories</option>
-                        <option value="5">Protectors</option>
-                    </select>
-                    -->
                 </div> 
             </div>               
                     
