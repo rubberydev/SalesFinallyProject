@@ -2,7 +2,7 @@ function validateData() {
 if($("#fldCatDiscount").val() < 0){
 
        swal("There was an error", 
-             "The field discount must be more 0 or moter.. ", 
+             "The field discount must be more 0 or more.. ", 
              "error");
             return false;  
 
@@ -23,7 +23,7 @@ if($("#fldCatDiscount").val() < 0){
     }else if ($("#fldCatName").val() == "" && $("#fldCatDiscount").val() == "") {
 
         swal("ERROR", 
-             "there aren't information in the form, try again", 
+             "There isn't information in the form, try again", 
              "error");
     
         return false;

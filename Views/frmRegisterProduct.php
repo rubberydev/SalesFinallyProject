@@ -85,8 +85,8 @@
                     ?>                   
                 </div> 
                 <div class="form-group">
-                    <label>Trademark: </label><br>
-                    <input type="text" id="fldNam" class="form-control" placeholder="trademark" name="name"/>
+                    <label>Product Name: </label><br>
+                    <input type="text" id="fldNam" class="form-control" placeholder="product name" name="name"/>
                 </div>
                  <div class="form-group">
                     <label>Description: </label><br>

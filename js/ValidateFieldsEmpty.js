@@ -46,8 +46,8 @@ function Validate(ctl, event) {
         type: "info",
         showCancelButton: true,
         confirmButtonColor: "#DD6B55",
-        confirmButtonText: "Guardar",
-        cancelButtonText: "Cancelar",
+        confirmButtonText: "Save",
+        cancelButtonText: "Cancel",
         closeOnConfirm: false,
         closeOnCancel: false
     },
