@@ -36,6 +36,7 @@
         } else {
             $_SESSION['LastSession']=$CurrentDate;
         }
+//Julian Herrera - Luis Alejandro Ramirez - Alexis Hernandez
 ?>
 </body>
 </html>

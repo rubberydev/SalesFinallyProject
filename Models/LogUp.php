@@ -113,6 +113,8 @@
             }
       }
      }
+
+//Julian Herrera - Luis Alejandro Ramirez - Alexis Hernandez
     ?>
     <script src="js/bootstrap.min.js"></script>
 </body>

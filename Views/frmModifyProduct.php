@@ -76,14 +76,6 @@
                         $category = new Category();
                         $category->showCategorySelected($categ);
                         ?>
-
-                        <!--<select class="selectpicker" name="categ">
-                            <option value="1">T-Shirt</option>
-                            <option value="2" <?php //if($categ == 2) { echo "selected";}?>>Pants</option>
-                            <option value="3" <?php //if($categ == 3) { echo "selected";}?>>Runners</option>
-                            <option value="4" <?php //if($categ == 4) { echo "selected";}?>>Accesories</option>
-                            <option value="5" <?php //if($categ == 5) { echo "selected";}?>>Protectors</option>
-                        </select>-->
                     </div>  
                 </div>
               </form>
@@ -95,5 +87,7 @@
      <script src="../js/bootstrap.min.js"></script>
      <br><a href="../Views/SectionMain.php" class="btn btn-warning">Back to main section</a>
      <a href="../Cookies/CloseSession.php" class="btn btn-danger">Close session</a>
+
+     <footer>Julian Herrera - Luis Alejandro Ramirez - Alexis Hernandez</footer>
 </body>
 </html>

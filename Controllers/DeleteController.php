@@ -8,4 +8,5 @@ $DelProduct = new Product();
 
 $DelProduct->DeleteProductById($proid, $nam);
 
+//Julian Herrera - Luis Alejandro Ramirez - Alexis Hernandez
 ?>

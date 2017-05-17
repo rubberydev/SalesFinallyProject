@@ -14,4 +14,6 @@ $objProduct->setQuantity($quantity);
 $objProduct->setCost($cost);
 $objProduct->setCategory($category);
 $objProduct->registerProduct();
+
+//Julian Herrera - Luis Alejandro Ramirez - Alexis Hernandez
 ?>

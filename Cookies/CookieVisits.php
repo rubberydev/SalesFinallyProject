@@ -7,4 +7,6 @@
         }else{ 
         setcookie('Countvisits',1,time()+365*24*60*60); 
         }
+
+//Julian Herrera - Luis Alejandro Ramirez - Alexis Hernandez
 ?>

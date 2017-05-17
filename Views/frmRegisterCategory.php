@@ -96,5 +96,7 @@
 </section>    
     <script src="../js/jquery-3.1.1.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    
+    <footer>Julian Herrera - Luis Alejandro Ramirez - Alexis Hernandez</footer>
  </body>
  </html>

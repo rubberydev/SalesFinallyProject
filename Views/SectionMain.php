@@ -69,5 +69,6 @@
     </div>
      
      <script src="../js/sweetalert.min.js"></script>
+     <footer>Julian Herrera - Luis Alejandro Ramirez - Alexis Hernandez</footer>
 </body>
 </html>

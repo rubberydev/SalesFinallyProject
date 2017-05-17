@@ -33,7 +33,7 @@ $graphic->Stroke();
 
 function retrieveSales($column) {
 
-  $con = new mysqli('localhost', 'root','7lp3cqmfF4:13', 'DB_SportWear');
+  $con = new mysqli('localhost', 'lucho','123456', 'FirstConnection');
   $array = array();
 
   $salesSQL = "SELECT * FROM Sales";
@@ -46,4 +46,6 @@ function retrieveSales($column) {
   }
   return $array;
 }
+
+//Julian Herrera - Luis Alejandro Ramirez - Alexis Hernandez.
 ?>

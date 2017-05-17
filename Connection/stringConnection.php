@@ -20,8 +20,7 @@
             }
     </script>
 </head>
-<body> 
-
+<body>
 <?php
 class dbConnection{
     public static function connectedDB(){
@@ -35,6 +34,8 @@ class dbConnection{
             }
         }
     }
+
+// Julian Herrera - Luis Alejandro Ramirez - Alexis Hernandez.
 ?>
 <script src="js/jquery-3.1.1.js"></script>
 <script src="js/bootstrap.min.js"></script>
