@@ -74,28 +74,30 @@
         <div class="panel panel-default">
             <div class="panel-body">
              <h2>Type information of Category</h2><br><hr>
-                <form action="../Controllers/categoryController.php" method="post">
-            <div class="col-sm-5">
+                <form action="../Controllers/categoryController.php" id="CategoryForm" method="post">
+            <div class="col-sm-5">               
                 <div class="form-group">
                     <label>Name: </label><br>
-                    <input type="text" class="form-control" placeholder="Name" name="CategoryName" required/>
+                    <input type="text" id="fldCatName" class="form-control" placeholder="Name" name="CategoryName"/>
                 </div> 
-                <input type="submit" name="Send" value="Save" class="btn btn-success"/> <input type="reset" class="btn btn-danger" name="Clean"/>
+                <input type="submit" name="Send" onclick="Validate(this, event);" value="Save" class="btn btn-success"/> <input type="reset" class="btn btn-danger" name="Clean"/>
            </div>
            <div class="col-sm-5 col-sm-offset-2">
                 <div class="form-group">
                     <label>Discount(%): </label><br>
-                    <input type="number" class="form-control" name="discount" value="0" required/>
+                    <input type="number" id="fldCatDiscount" class="form-control" name="discount" />
                 </div>
             </div>                
-                </form>
+           </form>
           </div>
        </div>    
   </div>
 </div> 
 </section>    
-    <script src="../js/jquery-3.1.1.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+     <script src="../js/jquery-3.1.1.js"></script>
+    <script src="../js/jquery.validate.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/ValidateFieldsCategory.js"></script>
     
     <footer>Julian Herrera - Luis Alejandro Ramirez - Alexis Hernandez</footer>
  </body>

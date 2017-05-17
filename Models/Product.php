@@ -8,10 +8,10 @@
     
     <title>Product</title>
     <script>
-         function ProductRegistered(name){
+         function ProductRegistered(name, disc){
                swal({
                     title: "Done!",
-                    text: "Product: "+name+" has been saved successfully.",
+                    text: "This product of trademark: "+name+" with discount the price to pay: $"+disc,
                     type: "success",
                     showCancelButton: false,
                     confirmButtonColor: "green",
@@ -26,7 +26,7 @@
             function ProductDeleted(id, name){
                swal({
                     title: "Done!",
-                    text: "Product: "+name+" with ID "+id+" has been deleted successfully.",
+                    text: "This product of trademark: "+name+" with ID "+id+" has been deleted successfully.",
                     type: "success",
                     showCancelButton: false,
                     confirmButtonColor: "green",
@@ -41,7 +41,7 @@
             function Update(name){
                swal({
                     title: "Done!",
-                    text: "Product "+name+" has been updated successfully.",
+                    text: "This product of trademark: "+name+" has been updated successfully.",
                     type: "success",
                     showCancelButton: false,
                     confirmButtonColor: "green",
@@ -122,7 +122,7 @@ class Product {
         $res = $this->con->query($insertSQL);
 
         if($res) {
-            echo '<script>ProductRegistered("'.$this->name.'");</script>';
+            echo '<script>ProductRegistered("'.$this->name.'","'.$this->cost.'");</script>';
         } else {
             echo "Registry failed.";            
             exit();
@@ -239,8 +239,10 @@ class Product {
 //Julian Herrera - Luis Alejandro Ramirez - Alexis Hernandez
 ?>
  <script src="../js/jquery-3.1.1.js"></script>
- <script src="js/bootstrap.min.js"></script>
+ <script src="../js/bootstrap.min.js"></script>
+ <script src="../js/jquery.validate.min.js"></script>
  <script src="../js/sweetalert.min.js"></script>
  <script src="../js/Tooltip.js"></script>
+ <script src="../js/ControlDel.js"></script>
 </body>
 </html>

@@ -29,7 +29,7 @@ class dbConnection{
                 echo "<script>Error();</script>";
                 exit();
             } else {
-                //echo "Succesful connection. <br>";
+                
                 return $conexion;
             }
         }

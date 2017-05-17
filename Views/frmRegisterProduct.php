@@ -74,35 +74,36 @@
         <div class="panel panel-default">
             <div class="panel-body">
              <h2>Type information of product</h2><br><hr>
-                <form action="../Controllers/productController.php" method="post">
+                <form action="../Controllers/productController.php" id="SavedFormProduct" method="post">
             <div class="col-sm-5">
-                <div class="form-group">
-                    <label>Name: </label><br>
-                    <input type="text" class="form-control" placeholder="Name" name="name" required/>
-                </div>
-                 <div class="form-group">
-                    <label>Description: </label><br>
-                    <textarea rows="2" cols="60" name="description" required></textarea>
-                </div>  
-                <input type="submit" name="Send" value="Save" class="btn btn-success"/> <input type="reset" class="btn btn-danger" name="Clean"/>
-           </div>
-           <div class="col-sm-5 col-sm-offset-2">
-                <div class="form-group">
-                    <label>Quantity: </label><br>
-                    <input type="number" class="form-control" name="quantity" required/>
-                </div>
-                <div class="form-group">
-                    <label>Cost: </label><br>                
-                    <input type="number" class="form-control" name="cost" required/>
-                </div>
                 <div class="form-group">
                     <label>Category: </label><br>
                     <?php
                         require("../Models/Category.php");
                         $category = new Category();
                         $category->showListCategoryForm();
-                    ?>
+                    ?>                   
                 </div> 
+                <div class="form-group">
+                    <label>Trademark: </label><br>
+                    <input type="text" id="fldNam" class="form-control" placeholder="trademark" name="name"/>
+                </div>
+                 <div class="form-group">
+                    <label>Description: </label><br>
+                    <textarea rows="2" id="fldDescript" cols="60" name="description"></textarea>
+                </div>  
+                <input type="submit" name="Send" onclick="Validate(this, event);" value="Save" class="btn btn-success"/> <input type="reset" class="btn btn-danger" name="Clean"/>
+           </div>
+           <div class="col-sm-5 col-sm-offset-2">
+                <div class="form-group">
+                    <label>Quantity: </label><br>
+                    <input type="number" id="fldQuant" class="form-control" name="quantity"/>
+                </div>
+                <div class="form-group">
+                    <label>Price: </label><br>                
+                    <input type="number" id="fldPrice" class="form-control" name="cost"/>
+                </div>
+                
             </div>               
                     
                 </form>
@@ -112,7 +113,9 @@
 </div> 
 </section>    
     <script src="../js/jquery-3.1.1.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/jquery.validate.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/ValidateFieldsEmpty.js"></script>
     <footer>Julian Herrera - Luis Alejandro Ramirez - Alexis Hernandez</footer>
  </body>
  </html>

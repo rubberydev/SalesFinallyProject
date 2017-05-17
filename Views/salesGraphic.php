@@ -33,7 +33,7 @@ $graphic->Stroke();
 
 function retrieveSales($column) {
 
-  $con = new mysqli('localhost', 'lucho','123456', 'FirstConnection');
+  $con = new mysqli('localhost', 'root','7lp3cqmfF4:13', 'DB_SportWear');
   $array = array();
 
   $salesSQL = "SELECT * FROM Sales";

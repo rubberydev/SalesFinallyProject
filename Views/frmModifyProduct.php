@@ -15,19 +15,7 @@
     $quan = $_POST['proQuan'];
     $cost = $_POST['proCost'];
     $categ = $_POST['proCateg'];
-
-  /*require('../Cookies/Validar.php');
-     
-     if($_SESSION['RolSystem'] == "Student"){      
-        echo "Visits of customer: ".$_COOKIE['visitsCustomer'];
-        require_once("../Cookies/Time2.php");
-     } else if($_SESSION['RolSystem'] == "Administrator") {
-       echo "Visits of Administrator: ".$_COOKIE['visitsAdministrator'];
-        require_once("../Cookies/Time.php");         
-     } else if($_SESSION['RolSystem'] == "Employee") {    
-       echo "Visits of employee: ".$_COOKIE['visitsEmployee'];
-        require_once("../Cookies/Time.php");         
-     }    */ 
+  
     ?>
     <div class="container-fluid">
        <div class="row">
@@ -42,9 +30,18 @@
                             echo $prodID;
                         ?>" required readonly />
                     </div>
+                     <div class="form-group">
+                        <label>Category: </label><br>
+                        <?php
+                        require("../Models/Category.php");
+                        $category = new Category();
+                        $category->showCategorySelected($categ);
+                        ?>
+                       
+                    </div>  
                     <div class="form-group">
-                        <label>Name: </label><br>
-                        <input type="text" class="form-control" placeholder="Name" name="nam" value="<?php
+                        <label>Trademark: </label><br>
+                        <input type="text" class="form-control" placeholder="trademark" name="nam" value="<?php
                             echo $name;
                         ?>" required/>
                     </div>
@@ -69,14 +66,7 @@
                             echo $cost;
                         ?>" required/>
                     </div>
-                    <div class="form-group">
-                        <label>Category: </label><br>
-                        <?php
-                        require("../Models/Category.php");
-                        $category = new Category();
-                        $category->showCategorySelected($categ);
-                        ?>
-                    </div>  
+                   
                 </div>
               </form>
           </div>
