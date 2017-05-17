@@ -19,7 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `DB_SportWear`
 --
-
+CREATE DATABASE IF NOT EXISTS `DB_SportWear` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci */;
+USE `DB_SportWear`;
 -- --------------------------------------------------------
 
 --
