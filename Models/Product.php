@@ -11,7 +11,7 @@
          function ProductRegistered(name, disc){
                swal({
                     title: "Done!",
-                    text: "This product of trademark: "+name+" with discount the price to pay: $"+disc,
+                    text: "Product Registered: The product "+name+" has been registered with a price of $"+disc,
                     type: "success",
                     showCancelButton: false,
                     confirmButtonColor: "green",
@@ -26,7 +26,7 @@
             function ProductDeleted(id, name){
                swal({
                     title: "Done!",
-                    text: "This product of trademark: "+name+" with ID "+id+" has been deleted successfully.",
+                    text: "Product Deleted: The Product "+name+" with ID "+id+" has been deleted successfully.",
                     type: "success",
                     showCancelButton: false,
                     confirmButtonColor: "green",
@@ -41,7 +41,7 @@
             function Update(name){
                swal({
                     title: "Done!",
-                    text: "This product of trademark: "+name+" has been updated successfully.",
+                    text: "Product Updated: The Product "+name+" has been updated successfully.",
                     type: "success",
                     showCancelButton: false,
                     confirmButtonColor: "green",

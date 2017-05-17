@@ -2,7 +2,7 @@ function validateData() {
 if($("#fldCatDiscount").val() < 0){
 
        swal("There was an error", 
-             "The field discount must be more than 0.. ", 
+             "The field discount must be more 0 or moter.. ", 
              "error");
             return false;  
 
@@ -38,12 +38,12 @@ function Validate(ctl, event) {
     event.preventDefault();
     swal({
         title: "Are you sure you want to save this information?",
-        text: "Check the information before saved!",
+        text: "Check the information before saving!",
         type: "info",
         showCancelButton: true,
         confirmButtonColor: "#DD6B55",
-        confirmButtonText: "Guardar",
-        cancelButtonText: "Cancelar",
+        confirmButtonText: "Save",
+        cancelButtonText: "Cancel",
         closeOnConfirm: false,
         closeOnCancel: false
     },
@@ -57,7 +57,7 @@ function Validate(ctl, event) {
                     isConfirm.closeOnConfirm = true
                 }                 
             } else {
-                swal("Canceled", "You didn't save nothing!", "error");
+                swal("Canceled", "You didn't save!", "error");
             }
         });
 }

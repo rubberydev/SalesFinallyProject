@@ -8,7 +8,7 @@ function validateData() {
     }else if ($("#fldNam").val() == "") { 
 
         swal("There was an error", 
-             "The field trademark is required", 
+             "The field Product Name is required", 
              "error");    
         return false;
 
@@ -61,7 +61,7 @@ function Validate(ctl, event) {
                     isConfirm.closeOnConfirm = true
                 }                 
             } else {
-                swal("Canceled", "You didn't save nothing!", "error");
+                swal("Canceled", "You didn't save!", "error");
             }
         });
 }

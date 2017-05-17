@@ -40,8 +40,8 @@
                        
                     </div>  
                     <div class="form-group">
-                        <label>Trademark: </label><br>
-                        <input type="text" class="form-control" placeholder="trademark" name="nam" value="<?php
+                        <label>Product Name: </label><br>
+                        <input type="text" class="form-control" placeholder="product name" name="nam" value="<?php
                             echo $name;
                         ?>" required/>
                     </div>
