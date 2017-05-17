@@ -19,7 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `DB_SportWear`
 --
-
+CREATE DATABASE IF NOT EXISTS `DB_SportWear` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci */;
+USE `DB_SportWear`;
 -- --------------------------------------------------------
 
 --
@@ -91,6 +92,23 @@ INSERT INTO `Category`(`CategoryName`, `Discount`) VALUES("Pants", 0);
 INSERT INTO `Category`(`CategoryName`, `Discount`) VALUES("Runners", 0);
 INSERT INTO `Category`(`CategoryName`, `Discount`) VALUES("Accesories", 0);
 INSERT INTO `Category`(`CategoryName`, `Discount`) VALUES("Protectors", 0);
+
+--
+-- Creation of table `Sales``
+--
+CREATE TABLE `Sales` ( 
+  `Month` VARCHAR(11) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL , 
+  `Earnings` DECIMAL(15) NOT NULL 
+) ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_spanish_ci;
+
+--
+-- Data for `Sales` table, to make the graphic.
+--
+INSERT INTO `Sales`(`Month`, `Earnings`) VALUES("January", 1000000);
+INSERT INTO `Sales`(`Month`, `Earnings`) VALUES("February", 5000000);
+INSERT INTO `Sales`(`Month`, `Earnings`) VALUES("March", 20000000);
+INSERT INTO `Sales`(`Month`, `Earnings`) VALUES("April", 900000);
+INSERT INTO `Sales`(`Month`, `Earnings`) VALUES("May", 1500000);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

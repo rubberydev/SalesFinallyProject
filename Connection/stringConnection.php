@@ -25,7 +25,7 @@
 <?php
 class dbConnection{
     public static function connectedDB(){
-            $conexion = new mysqli('localhost', 'root','7lp3cqmfF4:13', 'FirstConnection');
+            $conexion = new mysqli('localhost', 'root','7lp3cqmfF4:13', 'DB_SportWear');
             if($conexion->connect_error) {
                 echo "<script>Error();</script>";
                 exit();

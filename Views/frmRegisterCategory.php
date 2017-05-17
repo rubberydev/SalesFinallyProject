@@ -76,10 +76,6 @@
              <h2>Type information of Category</h2><br><hr>
                 <form action="../Controllers/categoryController.php" method="post">
             <div class="col-sm-5">
-                <!--<div class="form-group">
-                    <label>Category ID: </label><br>
-                    <input type="number" class="form-control" name="CategoryID" required/>
-                </div>-->
                 <div class="form-group">
                     <label>Name: </label><br>
                     <input type="text" class="form-control" placeholder="Name" name="CategoryName" required/>
