@@ -116,6 +116,6 @@
     <script src="../js/jquery.validate.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/ValidateFieldsEmpty.js"></script>
-    <footer>Julian Herrera - Luis Alejandro Ramirez - Alexis Hernandez</footer>
+    <footer>Julian Herrera - Luis Alejandro Ramirez</footer>
  </body>
  </html>

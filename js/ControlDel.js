@@ -6,17 +6,21 @@ function Confirm(ctl, event) {
         type: "warning",
         showCancelButton: true,
         confirmButtonColor: "#DD6B55",
-        confirmButtonText: "Aceptar",
-        cancelButtonText: "Cancelar",
+        confirmButtonText: "Delete",
+        cancelButtonText: "Cancel",
         closeOnConfirm: true,
         closeOnCancel: false
     }, function (isConfirm) {
         if (isConfirm) {
             //$("#DeleteProduct").submit();
-           
+           swal("", "", "success");
+                    $("#ShowListProducts").submit();
+                    isConfirm.closeOnConfirm = true
 
         } else {
             swal("Canceled", "You didn't delete this register!", "error");
         }
     });
 }
+
+//Julian Herrera - Luis Alejandro Ramirez
