@@ -64,15 +64,16 @@ class Category {
         $discRes = $this->conex->query($categResult);
         
         if($discRes->num_rows > 0) {
-            echo "<select class='selectpicker' name='category'>";
+            echo "<select class='selectpicker' name='category' onchange='selectProduct(this.value);'>";
             while($logCateg = $discRes->fetch_assoc()){
-                $catID = $logCateg['CategoryID'];
+                $catID =$logCateg['CategoryID'];
                 $catName = $logCateg['CategoryName'];
-                echo "<option value='$catID'>$catName</option>";
+                echo "<option value='".$catID."'>$catName</option>";
             }
             echo "</select>";
+            $this->conex->close();
         }
-        $this->conex->close();
+        
     }
 
     public function showCategorySelected($categName) {
@@ -91,6 +92,20 @@ class Category {
                 echo">$catName</option>";
             }
             echo "</select>";
+        }
+        $this->conex->close();
+    }
+
+
+    public function BringProductsByCategory($Par){        
+       $Query = "SELECT * FROM products WHERE categID = '$Par'";
+        $Result = $this->conex->query($Query);
+
+        if($Result->num_rows>0){
+            while($log = $Result->fetch_assoc()){
+                 echo "<option value='".$log['name']."'>".$log['name']."</option>";
+            }
+
         }
         $this->conex->close();
     }
@@ -130,11 +145,12 @@ class Category {
           <?php
         }
 }
-//Julian Herrera - Luis Alejandro Ramirez
+
 ?>
  <script src="../js/jquery-3.1.1.js"></script>
  <script src="js/bootstrap.min.js"></script>
  <script src="../js/sweetalert.min.js"></script>
  <script src="../js/Tooltip.js"></script>
+ <script src="../js/LoadProduct.js"></script>
 </body>
 </html>

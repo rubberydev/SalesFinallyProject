@@ -78,6 +78,6 @@
      <br><a href="../Views/SectionMain.php" class="btn btn-warning">Back to main section</a>
      <a href="../Cookies/CloseSession.php" class="btn btn-danger">Close session</a>
 
-     <footer>Julian Herrera - Luis Alejandro Ramirez</footer>
+     
 </body>
 </html>

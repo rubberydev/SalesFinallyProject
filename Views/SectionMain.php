@@ -29,7 +29,7 @@
       <div class="col-sm-12">
         <header>
             <h1>Welcome Dear <?php 
-          require("../Cookies/Validar.php");
+          include("../Cookies/Validar.php");
           echo $_SESSION['RolSystem'];
           ?>!!</h1>
           <?php 
@@ -69,6 +69,6 @@
     </div>
      
      <script src="../js/sweetalert.min.js"></script>
-     <footer>Julian Herrera - Luis Alejandro Ramirez</footer>
+     
 </body>
 </html>

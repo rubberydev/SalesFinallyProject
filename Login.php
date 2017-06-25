@@ -74,6 +74,6 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/sweetalert.min.js"></script>
 
-<footer>Julian Herrera - Luis Alejandro Ramirez</footer>
+
 </body>
 </html>

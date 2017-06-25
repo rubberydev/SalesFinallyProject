@@ -1,5 +1,5 @@
 <?php
- //require("Validar.php");
+ require("Validar.php");
  if(($_COOKIE['Countvisits'] != null))
        { 
         //dura un año la cookie                            days*hh*mm*ss
@@ -8,5 +8,5 @@
         setcookie('Countvisits',1,time()+365*24*60*60); 
         }
 
-//Julian Herrera - Luis Alejandro Ramirez
+
 ?>

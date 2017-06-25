@@ -18,5 +18,4 @@ $UpdProduct->setCost($cos);
 $UpdProduct->setCategory($categ);
 $UpdProduct->UpdateProduct($proid);
 
-//Julian Herrera - Luis Alejandro Ramirez
 ?>

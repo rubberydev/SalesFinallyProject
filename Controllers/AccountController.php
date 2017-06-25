@@ -11,5 +11,5 @@ $instUser->setPassword($Fieldpass);
 $instUser->setRol($FieldRol);
 $instUser->registerUser();
 
-//Julian Herrera - Luis Alejandro Ramirez
+
 ?>

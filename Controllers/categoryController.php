@@ -10,5 +10,5 @@ $objCategory->setCategoryName($name);
 $objCategory->setDiscount($disc);
 $objCategory->registerCategory();
 
-//Julian Herrera - Luis Alejandro Ramirez
+
 ?>

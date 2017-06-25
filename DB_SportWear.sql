@@ -30,7 +30,7 @@ USE `DB_SportWear`;
 CREATE TABLE `Category` (
   `CategoryID` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `CategoryName` varchar(15) CHARACTER SET utf8 COLLATE utf8_spanish_ci DEFAULT NULL,
-  `Discount` float(10) CHARACTER SET utf8 COLLATE utf8_spanish_ci DEFAULT NULL
+  `Discount` float(10) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
@@ -44,7 +44,7 @@ CREATE TABLE `Products` (
   `name` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci DEFAULT NULL,
   `description` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish_ci DEFAULT NULL,
   `quantity` varchar(10) CHARACTER SET utf8 COLLATE utf8_spanish_ci DEFAULT NULL,
-  `cost` float(10) CHARACTER SET utf8 COLLATE utf8_spanish_ci DEFAULT NULL,
+  `cost` float(10),
   `categID` int(11) DEFAULT NULL,
   `customID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
@@ -84,6 +84,7 @@ ALTER TABLE `Products`
   ADD CONSTRAINT `Products_ibfk_1` FOREIGN KEY (`CategID`) REFERENCES `Category` (`CategoryID`),
   ADD CONSTRAINT `Products_ibfk_2` FOREIGN KEY (`CustomID`) REFERENCES `Users` (`CustomerID`);
 
+
 --
 -- Base Categories for table `Category``
 --
@@ -93,6 +94,23 @@ INSERT INTO `Category`(`CategoryName`, `Discount`) VALUES("Runners", 0);
 INSERT INTO `Category`(`CategoryName`, `Discount`) VALUES("Accesories", 0);
 INSERT INTO `Category`(`CategoryName`, `Discount`) VALUES("Protectors", 0);
 
+--
+-- CreatE INSERT `Products`
+--
+INSERT INTO `products` (`productID`, `name`, `description`, `quantity`, `cost`, `categID`, `customID`) VALUES ('1', 'Asiscs 56h', NULL, NULL, NULL, '1', NULL),
+('2', 'Polo 98kk', NULL, NULL, NULL, '1', NULL),
+('3', 'Nike x45', NULL, NULL, NULL, '1', NULL),
+('4', 'Diesel', NULL, NULL, NULL, '2', NULL),
+('5', 'Marithe Francois Girbaud', NULL, NULL, NULL, '2', NULL),
+('6', 'Adidas', NULL, NULL, NULL, '3', NULL),
+('7', 'Apple watch', NULL, NULL, NULL, '4', NULL),
+('8', 'Cap Under Armor', NULL, NULL, NULL, '4', NULL),
+('9', 'under clothes', NULL, NULL, NULL, '4', NULL),
+('10', 'Mp3', NULL, NULL, NULL, '4', NULL),
+('11', 'SunBlock', NULL, NULL, NULL, '5', NULL),
+('12', 'swimsuit', NULL, NULL, NULL, '5', NULL),
+('13', 'hairband', NULL, NULL, NULL, '5', NULL),
+('14', 'hat', NULL, NULL, NULL, '5', NULL);
 --
 -- Creation of table `Sales``
 --

@@ -116,7 +116,7 @@ class Product {
                 $this->cost = $this->cost - ($this->cost * $logDisc['Discount']);
             }
         }
-
+                     
         $insertSQL = "INSERT INTO Products(name, description, quantity, cost, categID, customID) VALUES('$this->name','$this->description','$this->quantity', '$this->cost', '$this->category', '$custID')";
 
         $res = $this->con->query($insertSQL);
@@ -236,7 +236,7 @@ class Product {
         }
 }
 
-//Julian Herrera - Luis Alejandro Ramirez
+
 ?>
  <script src="../js/jquery-3.1.1.js"></script>
  <script src="../js/bootstrap.min.js"></script>

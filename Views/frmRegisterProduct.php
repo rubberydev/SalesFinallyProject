@@ -28,7 +28,7 @@
       <div class="col-sm-5">
      <?php
      
-    require_once('../Cookies/Validar.php');
+     require_once('../Cookies/Validar.php');
      echo "<div class='panel panel-default'><div class='panel-body'>";
      if($_SESSION['RolSystem'] == "Customer"){          
           echo "<script>ErrorRestrict(); </script>";
@@ -78,16 +78,21 @@
             <div class="col-sm-5">
                 <div class="form-group">
                     <label>Category: </label><br>
+                    
                     <?php
                         require("../Models/Category.php");
                         $category = new Category();
                         $category->showListCategoryForm();
-                    ?>                   
+
+                    ?>                
                 </div> 
-                <div class="form-group">
-                    <label>Product Name: </label><br>
-                    <input type="text" id="fldNam" class="form-control" placeholder="product name" name="name"/>
-                </div>
+               <div class="form-group">
+                    <label>Product Name: </label><br>  
+                    <div id="product">
+                    <select >                                       
+                    </select>  
+                    </div>                               
+                </div> 
                  <div class="form-group">
                     <label>Description: </label><br>
                     <textarea rows="2" id="fldDescript" cols="60" name="description"></textarea>
@@ -116,6 +121,7 @@
     <script src="../js/jquery.validate.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/ValidateFieldsEmpty.js"></script>
-    <footer>Julian Herrera - Luis Alejandro Ramirez</footer>
+    <script src="../js/LoadProduct.js"></script>
+    
  </body>
  </html>
