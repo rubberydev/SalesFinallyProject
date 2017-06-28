@@ -33,13 +33,23 @@
           echo $_SESSION['RolSystem'];
           ?>!!</h1>
           <?php 
+               
           if($_SESSION['control2'] == true){
+              
                $_SESSION['control2'] = false;
                require_once("../Cookies/CookieVisits.php");
-               echo "<strong>Visits of users: </strong>".$_COOKIE['Countvisits'];  
+
+               if(!isset($_COOKIE['Countvisits'])){
+                  echo "<strong>Visits of users: 1</strong>";
+              }else{
+               echo "<strong>Visits of users: </strong>".$_COOKIE['Countvisits'];
+              }  
           } else {
-              echo "<strong>Visits of users: </strong>".$_COOKIE['Countvisits']; 
-          }     
+              
+                    echo "<strong>Visits of users: </strong>".$_COOKIE['Countvisits'];
+              
+               
+          } 
           ?>
         </header>
       </div>

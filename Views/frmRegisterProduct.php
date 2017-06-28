@@ -43,11 +43,19 @@
 
 
         if($_SESSION['RolSystem'] == "Customer" && $_SESSION['control'] == true){ 
-            $_SESSION['control'] = false;           
-            echo "<strong>Date your last visit dear customer: </strong>". $_COOKIE['LastVisitCustomer']; 
-            $LastDate =  date("Y-n-j H:i:s");  
-            setcookie('LastVisitCustomer', $LastDate ,time()+365*24*60*60);                    
-            require_once("../Cookies/Time2.php");
+            $_SESSION['control'] = false; 
+            if(!isset($_COOKIE['LastVisitCustomer'])){
+              echo "<strong>Welcome!!! your first visit start now: </strong>".date("Y-n-j H:i:s"); 
+              $LastDate =  date("Y-n-j H:i:s");  
+              setcookie('LastVisitCustomer', $LastDate ,time()+365*24*60*60);                    
+              require_once("../Cookies/Time2.php");
+            }else{
+              echo "<strong>Date your last visit dear customer: </strong>". $_COOKIE['LastVisitCustomer']; 
+              $LastDate =  date("Y-n-j H:i:s");  
+              setcookie('LastVisitCustomer', $LastDate ,time()+365*24*60*60);                    
+              require_once("../Cookies/Time2.php");
+            }         
+            
         } else if($_SESSION['RolSystem'] == "Administrator" && $_SESSION['control'] == true) {  
              $_SESSION['control'] = false;           
             echo "<strong>Your last visit dear Administrator: </strong>". $_COOKIE['LastVisitAdministrator']; 
