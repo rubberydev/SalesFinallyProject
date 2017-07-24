@@ -97,8 +97,7 @@
                <div class="form-group">
                     <label>Product Name: </label><br>  
                     <div id="product">
-                    <select >                                       
-                    </select>  
+                    <input type="text" id="fldNam" class="form-control" placeholder="product name" name="name"/>
                     </div>                               
                 </div> 
                  <div class="form-group">
