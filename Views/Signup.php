@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!--This is a test!-->
     <meta charset="UTF-8">
     <title>Register</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
